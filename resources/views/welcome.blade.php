@@ -25,7 +25,7 @@
                     aria-label="Eymar home"
                 >
                     <x-icon name="building" class="brand-mark" />
-                    <span class="brand-text"><span>eymar</span><small class="brand-tag">Build · Rent · Hire</small></span>
+                    <span class="brand-text"><span class="brand-word" data-en="Eymar" data-ar="إعمار">Eymar</span><small class="brand-tag" data-en="Build · Rent · Hire" data-ar="ابنِ · استأجر · وظِّف">Build · Rent · Hire</small></span>
                 </a>
 
                 <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
@@ -36,6 +36,7 @@
                     <div class="nav-links">
                         <a class="nav-link" href="{{ route('professionals.index') }}"><x-icon name="users" /><span data-en="Professionals" data-ar="المحترفون">Professionals</span></a>
                         <a class="nav-link" href="{{ route('products.index') }}"><x-icon name="box" /><span data-en="Products" data-ar="المنتجات">Products</span></a>
+                        <a class="nav-link" href="{{ route('projects.index') }}"><x-icon name="briefcase" /><span data-en="Projects" data-ar="المشاريع">Projects</span></a>
                         <a class="nav-link" href="{{ route('community.index') }}"><x-icon name="chat" /><span data-en="Community" data-ar="المجتمع">Community</span></a>
                     </div>
                 </nav>
@@ -350,10 +351,14 @@
         <script>
         (function () {
             var btn = document.querySelector('[data-nav-toggle]');
-            if (!btn) return;
+            var nav = document.querySelector('[data-main-nav]');
+            if (!btn || !nav) return;
             btn.addEventListener('click', function () {
                 var open = document.body.classList.toggle('nav-open');
                 btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            nav.addEventListener('click', function (e) {
+                if (e.target.closest('a')) document.body.classList.remove('nav-open');
             });
         })();
         </script>

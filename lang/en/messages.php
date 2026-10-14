@@ -2,6 +2,8 @@
 
 return [
     'brand' => 'Eymar',
+    'brand_tag' => 'Build · Rent · Hire',
+    'main_nav' => 'Main navigation',
     'home' => 'Home',
     'professionals' => 'Professionals',
     'products' => 'Products',

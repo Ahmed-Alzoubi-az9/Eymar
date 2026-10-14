@@ -15,13 +15,13 @@
             <div class="container header-inner">
                 <a class="brand" href="{{ route('home') }}">
                     <x-icon name="building" class="brand-mark" />
-                    <span class="brand-text"><span class="brand-word">{{ __('messages.brand') }}</span><small class="brand-tag">Build · Rent · Hire</small></span>
+                    <span class="brand-text"><span class="brand-word">{{ __('messages.brand') }}</span><small class="brand-tag">{{ __('messages.brand_tag') }}</small></span>
                 </a>
                 <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
                     <x-icon name="menu" class="icon-open" />
                     <x-icon name="close" class="icon-close" />
                 </button>
-                <nav class="main-nav" aria-label="{{ __('messages.home') }}" data-main-nav>
+                <nav class="main-nav" aria-label="{{ __('messages.main_nav') }}" data-main-nav>
                     <div class="nav-links">
                         <a class="nav-link" href="{{ route('professionals.index') }}" @if (request()->routeIs('professionals.*')) aria-current="page" @endif><x-icon name="users" /><span>{{ __('messages.professionals') }}</span></a>
                         <a class="nav-link" href="{{ route('products.index') }}" @if (request()->routeIs('products.*')) aria-current="page" @endif><x-icon name="box" /><span>{{ __('messages.products') }}</span></a>

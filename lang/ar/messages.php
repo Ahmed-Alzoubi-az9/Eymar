@@ -1,7 +1,9 @@
 <?php
 
 return [
-    'brand' => 'إيمار',
+    'brand' => 'إعمار',
+    'brand_tag' => 'ابنِ · استأجر · وظِّف',
+    'main_nav' => 'التنقل الرئيسي',
     'home' => 'الرئيسية',
     'professionals' => 'المحترفون',
     'products' => 'المنتجات',
