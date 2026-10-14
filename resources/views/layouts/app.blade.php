@@ -12,23 +12,6 @@
     <body class="app-shell">
         <a class="skip-link" href="#main">{{ __('messages.home') }}</a>
         <header class="site-header">
-            <div class="topbar">
-                <div class="container topbar-inner">
-                    <div class="topbar-contact">
-                        <span class="topbar-item"><x-icon name="phone" /> <span dir="ltr">+962 7 9000 0000</span></span>
-                        <a class="topbar-item" href="mailto:hello@eymar.jo"><x-icon name="mail" /> hello@eymar.jo</a>
-                        <span class="topbar-item topbar-location"><x-icon name="pin" /> Amman, Jordan</span>
-                    </div>
-                    <div class="topbar-social">
-                        <a class="social-btn" href="#" aria-label="Eymar on Facebook" title="Facebook"><x-icon name="facebook" /></a>
-                        <a class="social-btn" href="#" aria-label="Eymar on Instagram" title="Instagram"><x-icon name="instagram" /></a>
-                        <a class="social-btn" href="#" aria-label="Eymar on X" title="X"><x-icon name="x" /></a>
-                        <a class="social-btn" href="#" aria-label="Eymar on LinkedIn" title="LinkedIn"><x-icon name="linkedin" /></a>
-                        <a class="social-btn" href="#" aria-label="Eymar on YouTube" title="YouTube"><x-icon name="youtube" /></a>
-                        <a class="social-btn" href="#" aria-label="Eymar on WhatsApp" title="WhatsApp"><x-icon name="whatsapp" /></a>
-                    </div>
-                </div>
-            </div>
             <div class="container header-inner">
                 <a class="brand" href="{{ route('home') }}">
                     <x-icon name="building" class="brand-mark" />
