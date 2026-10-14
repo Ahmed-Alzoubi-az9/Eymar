@@ -74,7 +74,7 @@
                 <div class="footer-brand">
                     <a class="brand brand-footer" href="{{ route('home') }}">
                         <x-icon name="building" class="brand-mark" />
-                        <span class="brand-text"><span class="brand-word">Eymar</span><small class="brand-tag">إعمار · Jordan</small></span>
+                        <span class="brand-text"><span class="brand-word">{{ __('messages.brand') }}</span><small class="brand-tag">{{ __('messages.brand_tag') }}</small></span>
                     </a>
                     <p class="footer-about">One marketplace for construction materials, equipment, machinery and trusted professionals across Jordan.</p>
                     <div class="footer-social">

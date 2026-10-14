@@ -302,7 +302,7 @@
                 <div class="footer-brand">
                     <a class="brand brand-footer" href="#home">
                         <x-icon name="building" class="brand-mark" />
-                        <span class="brand-text"><span>eymar</span><small class="brand-tag">إعمار · Jordan</small></span>
+                        <span class="brand-text"><span class="brand-word" data-en="Eymar" data-ar="إعمار">Eymar</span><small class="brand-tag" data-en="Build · Rent · Hire" data-ar="ابنِ · استأجر · وظِّف">Build · Rent · Hire</small></span>
                     </a>
                     <p class="footer-about" data-en="One marketplace for construction materials, equipment, machinery and trusted professionals across Jordan." data-ar="سوق واحد لمواد البناء والمعدات والآليات والحرفيين الموثوقين في الأردن.">One marketplace for construction materials, equipment, machinery and trusted professionals across Jordan.</p>
                     <div class="footer-social">
