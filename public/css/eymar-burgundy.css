@@ -118,6 +118,10 @@ body {
 .art-backdrop::before, .art-backdrop::after { border-color: rgb(217 182 74 / 35%); }
 .art-label { color: var(--burgundy-900); }
 .project-card { border-top: 4px solid var(--gold-500); }
+/* Direction-agnostic centering: inset-inline-start becomes `right` in RTL,
+   which breaks translate(-50%) centering — pin physical `left` instead. */
+.hero-art { overflow: clip; }
+.construction-image { inset-inline-start: auto; left: 50%; max-width: 100%; transform: translate(-50%, -50%); }
 .project-tags span { color: var(--burgundy-800); background: var(--burgundy-50); }
 
 /* ---------- Trust strip / services ---------- */
