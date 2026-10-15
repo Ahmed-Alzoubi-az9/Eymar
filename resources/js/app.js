@@ -209,8 +209,21 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 
         revealTargets.forEach((target) => {
             target.dataset.motionReveal = '';
-            revealObserver.observe(target);
+            // Above-the-fold content is already visible: show it immediately
+            // instead of waiting for the observer callback (removes reload flash/delay).
+            const rect = target.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                target.classList.add('is-visible');
+            } else {
+                revealObserver.observe(target);
+            }
         });
         document.body.classList.add('motion-ready');
+        // Safety net: never leave content hidden if the observer is slow.
+        setTimeout(() => {
+            document.querySelectorAll('[data-motion-reveal]:not(.is-visible)').forEach((target) => {
+                target.classList.add('is-visible');
+            });
+        }, 800);
     }
 }
