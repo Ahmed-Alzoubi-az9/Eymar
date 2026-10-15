@@ -6,9 +6,9 @@
         <meta name="theme-color" content="#4a0d17">
         <meta
             name="description"
-            content="{{ app()->isLocale('ar') ? 'إيمار يربطك بالحرفيين والشركات المناسبة لإنجاز مشاريع البناء والصيانة والتحسين.' : 'Find skilled professionals and trusted businesses for repairs, construction, and projects of every size.' }}"
+            content="{{ app()->isLocale('ar') ? 'إعمار يربطك بالحرفيين والشركات المناسبة لإنجاز مشاريع البناء والصيانة والتحسين.' : 'Find skilled professionals and trusted businesses for repairs, construction, and projects of every size.' }}"
         >
-        <title>{{ app()->isLocale('ar') ? 'إيمار — اعثر على الأشخاص المناسبين لمشروعك' : 'Eymar — Find the right people for your next project' }}</title>
+        <title>{{ app()->isLocale('ar') ? 'إعمار — اعثر على الأشخاص المناسبين لمشروعك' : 'Eymar — Find the right people for your next project' }}</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <link rel="stylesheet" href="{{ asset('css/eymar-burgundy.css') }}">
     </head>
@@ -21,7 +21,7 @@
                     class="brand"
                     href="#home"
                     data-aria-en="Eymar home"
-                    data-aria-ar="الصفحة الرئيسية لإيمار"
+                    data-aria-ar="الصفحة الرئيسية لإعمار"
                     aria-label="Eymar home"
                 >
                     <x-icon name="building" class="brand-mark" />
@@ -64,7 +64,7 @@
                         </form>
                     @else
                         <a class="button button-outline header-auth-link" href="{{ route('login') }}" data-en="Sign in" data-ar="تسجيل الدخول">Sign in</a>
-                        <a class="button button-dark header-auth-link" href="{{ route('register') }}" data-en="Join Eymar" data-ar="انضم إلى إيمار">Join Eymar</a>
+                        <a class="button button-dark header-auth-link" href="{{ route('register') }}" data-en="Join Eymar" data-ar="انضم إلى إعمار">Join Eymar</a>
                     @endauth
                 </div>
             </div>
@@ -124,7 +124,7 @@
                 </div>
             </section>
 
-            <section class="trust-strip" aria-label="What you can find on Eymar" data-aria-en="What you can find on Eymar" data-aria-ar="ما ستجده على إيمار">
+            <section class="trust-strip" aria-label="What you can find on Eymar" data-aria-en="What you can find on Eymar" data-aria-ar="ما ستجده على إعمار">
                 <div class="container trust-grid">
                     <div class="trust-item">
                         <span class="trust-icon" aria-hidden="true">
@@ -240,7 +240,7 @@
                         <h2 data-en="From your idea to a job well done." data-ar="من فكرتك إلى إنجاز متقن.">
                             From your idea to a job well done.
                         </h2>
-                        <p data-en="Eymar is designed to make finding the right help feel simple, clear and human." data-ar="صُممت إيمار لتجعل العثور على المساعدة المناسبة أمراً بسيطاً وواضحاً.">
+                        <p data-en="Eymar is designed to make finding the right help feel simple, clear and human." data-ar="صُممت إعمار لتجعل العثور على المساعدة المناسبة أمراً بسيطاً وواضحاً.">
                             Eymar is designed to make finding the right help feel simple, clear and human.
                         </p>
                     </div>
@@ -289,7 +289,7 @@
                             </p>
                         </div>
                         <a class="button button-light professional-action" href="#how-it-works">
-                            <span data-en="See how Eymar works" data-ar="اكتشف كيف تعمل إيمار">See how Eymar works</span>
+                            <span data-en="See how Eymar works" data-ar="اكتشف كيف تعمل إعمار">See how Eymar works</span>
                             <x-icon name="arrow" class="button-arrow" />
                         </a>
                     </div>

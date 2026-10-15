@@ -9,7 +9,7 @@ function setLanguage(language) {
     document.documentElement.lang = isArabic ? 'ar' : 'en';
     document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
     document.title = isArabic
-        ? 'إيمار — اعثر على الأشخاص المناسبين لمشروعك'
+        ? 'إعمار — اعثر على الأشخاص المناسبين لمشروعك'
         : 'Eymar — Find the right people for your next project';
 
     document.querySelectorAll('[data-en][data-ar]').forEach((element) => {
@@ -24,7 +24,7 @@ function setLanguage(language) {
 
     if (description) {
         description.content = isArabic
-            ? 'إيمار يربطك بالحرفيين والشركات المناسبة لإنجاز مشاريع البناء والصيانة والتحسين.'
+            ? 'إعمار يربطك بالحرفيين والشركات المناسبة لإنجاز مشاريع البناء والصيانة والتحسين.'
             : 'Find skilled professionals and trusted businesses for repairs, construction, and projects of every size.';
     }
 
