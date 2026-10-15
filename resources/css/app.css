@@ -663,40 +663,54 @@ html[lang='ar'] .section-heading h2 {
 }
 
 .service-card {
+    position: relative;
     display: flex;
-    min-height: 170px;
+    min-height: 180px;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 23px;
-    background: #fbfcfe;
+    padding: 24px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #fff, #f4f9fd);
     border: 1px solid var(--line);
-    border-radius: 16px;
+    border-radius: 20px;
+    box-shadow: 0 10px 28px rgb(40 67 104 / 6%);
     transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    inset-block-start: -48px;
+    inset-inline-end: -48px;
+    width: 132px;
+    height: 132px;
+    background: radial-gradient(circle, rgb(71 178 228 / 16%), transparent 70%);
+    pointer-events: none;
 }
 
 .service-card:hover,
 .service-card:focus-visible {
     border-color: #b9dfef;
-    box-shadow: 0 14px 35px rgb(40 67 104 / 8%);
-    transform: translateY(-3px);
+    box-shadow: 0 16px 38px rgb(40 67 104 / 10%);
+    transform: translateY(3px);
 }
 
 .service-icon {
     display: grid;
-    width: 45px;
-    height: 45px;
+    width: 52px;
+    height: 52px;
     place-items: center;
     color: #2787b5;
-    background: linear-gradient(145deg, #e7f6fb, #f4fafc);
-    border: 1px solid #d8edf5;
-    border-radius: 15px;
-    box-shadow: inset 0 1px 0 rgb(255 255 255 / 90%), 0 4px 10px rgb(40 98 142 / 5%);
+    background: linear-gradient(145deg, #e2f4fc, #f6fbfd);
+    border: 1px solid #cde8f4;
+    border-radius: 17px;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 90%), 0 6px 14px rgb(40 98 142 / 10%);
 }
 
 .service-icon svg {
-    width: 25px;
-    height: 25px;
+    width: 26px;
+    height: 26px;
     stroke-width: 1.7;
 }
 
@@ -716,6 +730,16 @@ html[lang='ar'] .section-heading h2 {
     height: 18px;
     flex: 0 0 auto;
     color: #8194a8;
+    transition: color 180ms ease, transform 180ms ease;
+}
+
+.service-card:hover .service-arrow {
+    color: var(--accent-dark);
+    transform: translateX(4px);
+}
+
+html[dir='rtl'] .service-card:hover .service-arrow {
+    transform: scaleX(-1) translateX(4px);
 }
 
 .how-it-works {
