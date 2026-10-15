@@ -247,21 +247,21 @@
 
                     <div class="steps-grid">
                         <article class="step-card">
-                            <span class="step-number">01</span>
+                            <span class="step-number"><x-icon name="chat" /></span>
                             <h3 data-en="Share what you need" data-ar="اشرح ما تحتاج إليه">Share what you need</h3>
                             <p data-en="Start with the project, repair or service you have in mind." data-ar="ابدأ بالمشروع أو الإصلاح أو الخدمة التي تفكر فيها.">
                                 Start with the project, repair or service you have in mind.
                             </p>
                         </article>
                         <article class="step-card">
-                            <span class="step-number">02</span>
+                            <span class="step-number"><x-icon name="users" /></span>
                             <h3 data-en="Find your match" data-ar="اعثر على الشخص المناسب">Find your match</h3>
                             <p data-en="Explore skilled professionals and businesses that fit the work." data-ar="اكتشف الحرفيين والشركات المناسبة لطبيعة العمل.">
                                 Explore skilled professionals and businesses that fit the work.
                             </p>
                         </article>
                         <article class="step-card">
-                            <span class="step-number">03</span>
+                            <span class="step-number"><x-icon name="arrow" /></span>
                             <h3 data-en="Move your project forward" data-ar="تقدّم بمشروعك">Move your project forward</h3>
                             <p data-en="Connect, plan the next step and bring your idea to life." data-ar="تواصل وخطط للخطوة التالية وحوّل فكرتك إلى واقع.">
                                 Connect, plan the next step and bring your idea to life.

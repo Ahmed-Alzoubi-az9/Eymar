@@ -740,23 +740,51 @@ html[lang='ar'] .section-heading h2 {
 }
 
 .step-card {
+    position: relative;
     min-height: 228px;
-    padding: 26px;
-    background: rgb(255 255 255 / 5%);
-    border: 1px solid rgb(255 255 255 / 12%);
-    border-radius: 17px;
+    padding: 28px 26px;
+    overflow: hidden;
+    background: linear-gradient(160deg, rgb(255 255 255 / 9%), rgb(255 255 255 / 3%));
+    border: 1px solid rgb(255 255 255 / 14%);
+    border-radius: 20px;
+    box-shadow: 0 18px 45px rgb(10 25 45 / 25%);
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.step-card::before {
+    content: '';
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: 26px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgb(140 215 245 / 70%), transparent);
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.step-card:hover {
+    border-color: rgb(140 215 245 / 45%);
+    box-shadow: 0 18px 50px rgb(10 25 45 / 35%), 0 0 32px rgb(71 178 228 / 18%);
+    transform: translateY(3px);
 }
 
 .step-number {
     display: inline-grid;
-    width: 39px;
-    height: 39px;
+    width: 44px;
+    height: 44px;
     place-items: center;
     color: var(--navy);
-    background: #dff2fb;
+    background: linear-gradient(145deg, #eaf7fd, #cdeaf8);
+    border: 1px solid rgb(255 255 255 / 60%);
     border-radius: 50%;
-    font-size: 12px;
+    box-shadow: 0 6px 18px rgb(71 178 228 / 35%), inset 0 1px 0 rgb(255 255 255 / 80%);
+    font-size: 13px;
     font-weight: 800;
+}
+
+.step-number svg {
+    width: 22px;
+    height: 22px;
 }
 
 .step-card h3 {
