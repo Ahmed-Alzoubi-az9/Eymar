@@ -87,10 +87,23 @@ body {
     box-shadow: 0 12px 28px rgb(94 20 32 / 34%);
 }
 .button-outline { color: var(--burgundy-800); border-color: #d8c3c6; background: #fff; }
-.button-outline:hover { background: var(--burgundy-50); border-color: var(--burgundy-600); }
+.button-outline:hover {
+    color: #fff;
+    background: linear-gradient(145deg, var(--burgundy-600), var(--burgundy-800));
+    border-color: var(--burgundy-700);
+}
 .button-light { color: var(--burgundy-900); }
-.button-light:hover { background: var(--gold-100); }
+.button-light:hover {
+    color: var(--burgundy-950);
+    background: linear-gradient(145deg, var(--gold-400), var(--gold-500));
+    border-color: var(--gold-400);
+    box-shadow: 0 10px 24px rgb(201 162 39 / 30%);
+}
 .text-button { color: var(--burgundy-700); }
+.text-button:hover {
+    color: var(--burgundy-900);
+    text-decoration-color: var(--gold-500);
+}
 .form-footnote a, .listing-card h2 a, .product-detail a { color: var(--burgundy-700); }
 
 /* ---------- Eyebrows, headings ---------- */
@@ -111,7 +124,15 @@ body {
 .hero-description { color: #e9d5d3; }
 .hero .eyebrow { color: var(--gold-400); }
 .hero-actions .button-outline { color: #fff; border-color: rgb(255 255 255 / 45%); background: rgb(255 255 255 / 8%); }
-.hero-actions .button-outline:hover { background: rgb(255 255 255 / 16%); border-color: #fff; box-shadow: none; }
+.hero .button:hover,
+.how-it-works .button:hover,
+.professional-panel .button:hover,
+.site-footer .button:hover {
+    color: var(--burgundy-950);
+    background: linear-gradient(145deg, var(--gold-400), var(--gold-500));
+    border-color: var(--gold-400);
+    box-shadow: 0 10px 24px rgb(201 162 39 / 30%);
+}
 .hero-note { color: #d9c2bd; }
 .note-icon { color: var(--gold-400); }
 .art-backdrop { background: linear-gradient(160deg, rgb(217 182 74 / 35%), rgb(255 255 255 / 10%)); }
@@ -287,6 +308,14 @@ body {
     border: 1px solid var(--line);
     border-radius: 12px;
     cursor: pointer;
+    transition: color 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+.nav-toggle:hover {
+    color: var(--burgundy-900);
+    background: var(--burgundy-50);
+    border-color: var(--burgundy-100);
+    box-shadow: 0 6px 16px rgb(94 20 32 / 12%);
+    transform: translateY(-1px);
 }
 .nav-toggle .icon-close { display: none; }
 body.nav-open .nav-toggle .icon-open { display: none; }

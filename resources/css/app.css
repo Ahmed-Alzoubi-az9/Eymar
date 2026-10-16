@@ -298,7 +298,8 @@ svg {
 }
 
 .button-dark:hover {
-    background: var(--navy);
+    background: #7c2233;
+    box-shadow: 0 8px 18px rgb(124 34 51 / 35%);
 }
 
 .button-outline {
@@ -308,7 +309,9 @@ svg {
 }
 
 .button-outline:hover {
-    background: var(--white);
+    border-color: #7c2233;
+    color: #7c2233;
+    background: #f9ebef;
 }
 
 .button-light {
@@ -317,7 +320,9 @@ svg {
 }
 
 .button-light:hover {
-    background: #edf6fa;
+    color: #4a0d17;
+    background: var(--gold);
+    box-shadow: 0 8px 20px rgb(234 181 110 / 40%);
 }
 
 .button-arrow {
