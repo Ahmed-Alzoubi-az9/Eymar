@@ -285,6 +285,18 @@ body {
 .nav-link:hover .ui-icon { transform: translateY(-2px) scale(1.12); }
 
 /* ---------- Header action buttons ---------- */
+.header-actions .language-toggle,
+.header-actions .button-outline {
+    color: var(--burgundy-800);
+    background: #fff;
+    border-color: #d8c3c6;
+}
+.header-actions .button-dark {
+    color: #fff;
+    background: linear-gradient(145deg, var(--burgundy-600), var(--burgundy-800));
+    border-color: var(--burgundy-800);
+    box-shadow: 0 8px 18px rgb(94 20 32 / 22%), inset 0 1px 0 rgb(255 255 255 / 18%);
+}
 .header-actions .language-toggle {
     transition: color 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
@@ -302,10 +314,10 @@ body {
 .header-actions .language-toggle:focus-visible .language-icon { color: #fff; }
 .header-actions .button-dark:hover,
 .header-actions .button-dark:focus-visible {
-    color: var(--burgundy-950);
-    background: linear-gradient(145deg, var(--gold-400), var(--gold-500));
-    border-color: var(--gold-400);
-    box-shadow: 0 10px 24px rgb(201 162 39 / 30%);
+    color: #fff;
+    background: linear-gradient(145deg, var(--burgundy-700), var(--burgundy-950));
+    border-color: var(--gold-500);
+    box-shadow: 0 10px 24px rgb(56 9 15 / 30%), 0 0 0 1px rgb(201 162 39 / 20%);
     transform: translateY(-2px);
 }
 
