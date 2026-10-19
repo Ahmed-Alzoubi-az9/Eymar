@@ -143,6 +143,18 @@ body {
    which breaks translate(-50%) centering — pin physical `left` instead. */
 .hero-art { overflow: clip; }
 .construction-image { inset-inline-start: auto; left: 50%; max-width: 100%; transform: translate(-50%, -50%); }
+.hero-art .construction-image {
+    animation: construction-reveal 560ms cubic-bezier(.22, .68, 0, 1) both,
+        construction-float 5.2s cubic-bezier(.45, 0, .55, 1) 560ms infinite;
+}
+@keyframes construction-reveal {
+    from { opacity: 0; scale: .94; }
+    to { opacity: 1; scale: 1; }
+}
+@keyframes construction-float {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -6px; }
+}
 .project-tags span { color: var(--burgundy-800); background: var(--burgundy-50); }
 
 /* ---------- Trust strip / services ---------- */

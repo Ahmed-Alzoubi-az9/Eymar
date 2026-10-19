@@ -461,9 +461,6 @@ html[lang='ar'] .hero h1 {
 
 .construction-image {
     position: absolute;
-    width: min(100%, 500px);
-    max-height: 100%;
-    inset-block-start: 48%;
     inset-inline-start: 50%;
     object-fit: contain;
     transform: translate(-50%, -50%);

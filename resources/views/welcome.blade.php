@@ -108,7 +108,7 @@
                         <span class="art-label" data-en="MAKE ROOM FOR WHAT’S NEXT" data-ar="مساحة لما هو قادم">
                             MAKE ROOM FOR WHAT’S NEXT
                         </span>
-                        <img class="construction-image" src="{{ asset('images/construction-illustration.png') }}" alt="">
+                        <img class="construction-image w-[min(100%,500px)] max-h-[90%] top-[47%] max-[700px]:w-[min(100%,460px)] max-[700px]:max-h-[86%] max-[700px]:top-[46%] max-[420px]:w-full max-[420px]:max-h-[80%] max-[420px]:top-[45%]" src="{{ asset('images/construction-illustration.png') }}" alt="">
                         <div class="project-card">
                             <span class="project-card-label" data-en="YOUR NEXT PROJECT" data-ar="مشروعك القادم">YOUR NEXT PROJECT</span>
                             <strong data-en="A good plan brings the right people together." data-ar="الخطة الجيدة تجمع الأشخاص المناسبين.">
