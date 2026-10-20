@@ -132,7 +132,7 @@
                         </span>
                         <div>
                             <strong data-en="One place" data-ar="مكان واحد">One place</strong>
-                            <span data-en="For projects big and small" data-ar="للمشاريع الصغيرة والكبيرة">For projects big and small</span>
+                            <span data-en="For projects big and small — plan, hire and build in one place." data-ar="للمشاريع الصغيرة والكبيرة — خطط ووظّف وأنجز في مكان واحد.">For projects big and small — plan, hire and build in one place.</span>
                         </div>
                     </div>
                     <div class="trust-item">
@@ -141,7 +141,7 @@
                         </span>
                         <div>
                             <strong data-en="Local know-how" data-ar="خبرات من مجتمعك">Local know-how</strong>
-                            <span data-en="Find people who understand your area" data-ar="تواصل مع من يعرفون منطقتك">Find people who understand your area</span>
+                            <span data-en="Find people who understand your area — vetted neighbours and fair prices." data-ar="تواصل مع من يعرفون منطقتك — محترفون موثوقون وأسعار عادلة.">Find people who understand your area — vetted neighbours and fair prices.</span>
                         </div>
                     </div>
                     <div class="trust-item">
@@ -150,7 +150,7 @@
                         </span>
                         <div>
                             <strong data-en="Room to grow" data-ar="فرص للنمو">Room to grow</strong>
-                            <span data-en="For customers and professionals" data-ar="للعملاء وأصحاب المهن">For customers and professionals</span>
+                            <span data-en="For customers and professionals — post a job, win work and get paid." data-ar="للعملاء وأصحاب المهن — انشر مشروعك، واكسب العمل، واستلم أرباحك.">For customers and professionals — post a job, win work and get paid.</span>
                         </div>
                     </div>
                 </div>
