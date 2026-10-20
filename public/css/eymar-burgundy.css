@@ -158,12 +158,77 @@ body {
 .project-tags span { color: var(--burgundy-800); background: var(--burgundy-50); }
 
 /* ---------- Trust strip / services ---------- */
-.trust-item { border-color: var(--line); }
+.trust-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    overflow: visible;
+    background: transparent;
+    border: 0;
+}
+.trust-strip {
+    position: relative;
+    z-index: 1;
+    margin-block-start: -34px;
+}
+.trust-item {
+    position: relative;
+    min-width: 0;
+    min-height: 142px;
+    gap: 16px;
+    padding: 24px;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(145deg, var(--burgundy-800), var(--burgundy-950));
+    border: 1px solid var(--burgundy-800);
+    border-block-start: 4px solid var(--gold-400);
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgb(56 9 15 / 7%), inset 0 1px 0 rgb(255 255 255 / 90%);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+.trust-item + .trust-item { border-inline-start: 1px solid var(--burgundy-800); }
+.trust-item::after {
+    position: absolute;
+    inset-inline-end: -36px;
+    inset-block-end: -54px;
+    width: 118px;
+    height: 118px;
+    background: rgb(217 182 74 / 9%);
+    border: 1px solid rgb(217 182 74 / 22%);
+    border-radius: 50%;
+    content: '';
+    pointer-events: none;
+}
+.trust-item:hover {
+    border-color: var(--gold-400);
+    box-shadow: 0 18px 34px rgb(56 9 15 / 12%), inset 0 1px 0 rgb(255 255 255 / 90%);
+    transform: translateY(-4px);
+}
+.trust-item strong {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.35;
+}
+.trust-item > div > span {
+    position: relative;
+    z-index: 1;
+    max-width: 24ch;
+    color: #f0dfe0;
+    font-size: 13px;
+    line-height: 1.55;
+}
 .trust-icon, .service-icon, .action-card-icon, .profile-section-icon {
     color: var(--burgundy-700);
     background: linear-gradient(145deg, var(--burgundy-50), #fff);
     border-color: var(--burgundy-100);
     box-shadow: inset 0 1px 0 rgb(255 255 255 / 90%), 0 3px 9px rgb(94 20 32 / 7%);
+}
+.trust-item .trust-icon {
+    color: var(--gold-400);
+    background: rgb(255 255 255 / 10%);
+    border-color: rgb(217 182 74 / 42%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 12%);
 }
 .service-card:hover, .service-card:focus-visible { border-color: var(--burgundy-600); }
 .service-arrow { color: #b39a93; }
@@ -241,8 +306,21 @@ body {
 }
 @media (max-width: 560px) {
     .stat-grid, .action-grid, .card-grid, .search-form { grid-template-columns: 1fr; }
+    .trust-item { min-height: 124px; padding: 20px; }
     .form-columns { grid-template-columns: 1fr; }
     .page-heading-row, .feed-actions, .inline-form, .status-form { flex-wrap: wrap; }
+}
+@media (max-width: 700px) {
+    .trust-strip { margin-block-start: -24px; }
+    .trust-grid { grid-template-columns: 1fr; gap: 12px; }
+    .trust-item + .trust-item {
+        border-block-start: 4px solid var(--gold-400);
+        border-inline-start: 1px solid var(--burgundy-800);
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .trust-item { transition: none; }
+    .trust-item:hover { transform: none; }
 }
 
 /* ---------- Social buttons ---------- */
