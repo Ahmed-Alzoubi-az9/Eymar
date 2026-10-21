@@ -7,7 +7,7 @@
         <p class="eyebrow">{{ __('messages.brand') }}</p>
         <h1>{{ __('messages.browse_professionals') }}</h1>
     </div>
-    <form class="search-form" method="get" action="{{ route('professionals.index') }}">
+    <form class="search-form search-form--pros" method="get" action="{{ route('professionals.index') }}">
         <input name="q" value="{{ request('q') }}" placeholder="{{ __('messages.search_placeholder') }}" aria-label="{{ __('messages.search') }}" maxlength="100">
         <input name="location" value="{{ request('location') }}" placeholder="{{ __('messages.location') }}" aria-label="{{ __('messages.location') }}" maxlength="160">
         <select name="provider_type" aria-label="{{ __('messages.professional_type') }}">

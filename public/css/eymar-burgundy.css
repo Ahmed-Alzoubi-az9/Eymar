@@ -631,6 +631,84 @@ html[dir='rtl'] .service-card:focus-visible .service-arrow {
     outline: 3px solid rgb(123 30 43 / 18%);
     border-color: var(--burgundy-600);
 }
+
+/* ---------- Professionals search / filter form ---------- */
+.search-form--pros {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    padding: 22px;
+    background:
+        radial-gradient(500px 180px at 100% 0%, rgb(217 182 74 / 8%), transparent 62%),
+        #fff;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow:
+        0 14px 34px -14px rgb(56 9 15 / 22%),
+        inset 0 1px 0 rgb(255 255 255 / 90%);
+}
+.search-form--pros input,
+.search-form--pros select {
+    min-height: 48px;
+    padding: 11px 14px;
+    color: var(--ink);
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+.search-form--pros input::placeholder { color: var(--muted); opacity: .85; }
+.search-form--pros input:hover,
+.search-form--pros select:hover { border-color: #d8c3c6; background: #fff; }
+.search-form--pros input:focus,
+.search-form--pros select:focus {
+    background: #fff;
+    border-color: var(--burgundy-600);
+    outline: none;
+    box-shadow: 0 0 0 4px rgb(123 30 43 / 14%);
+}
+.search-form--pros select {
+    appearance: none;
+    padding-inline-end: 38px;
+    background-image:
+        linear-gradient(45deg, transparent 50%, var(--burgundy-700) 50%),
+        linear-gradient(135deg, var(--burgundy-700) 50%, transparent 50%);
+    background-position:
+        calc(100% - 20px) calc(50% - 2px),
+        calc(100% - 14px) calc(50% - 2px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+}
+html[dir='rtl'] .search-form--pros select {
+    padding-inline-end: 14px;
+    padding-inline-start: 38px;
+    background-position:
+        calc(0% + 20px) calc(50% - 2px),
+        calc(0% + 14px) calc(50% - 2px);
+}
+.search-form--pros select option {
+    padding: 12px 14px;
+    color: var(--burgundy-900);
+    background: #fdf6f4;
+    font-size: 14px;
+}
+.search-form--pros select option:nth-child(odd) {
+    background: #fff;
+}
+.search-form--pros select option:first-child {
+    color: var(--muted);
+    background: #f3e6e7;
+}
+.search-form--pros select option:checked,
+.search-form--pros select option:hover {
+    color: #fff;
+    background: var(--burgundy-700);
+}
+.search-form--pros button {
+    min-height: 48px;
+    border-radius: 12px;
+    box-shadow: 0 10px 22px -8px rgb(94 20 32 / 45%);
+}
+.search-form--pros button:hover { box-shadow: 0 14px 28px -8px rgb(94 20 32 / 58%); }
 .profile-avatar { color: var(--burgundy-700); background: linear-gradient(145deg, var(--burgundy-50), #fff); }
 .profile-role-badge { color: var(--burgundy-800); background: var(--burgundy-50); }
 .profile-save-bar { background: var(--burgundy-50); border-color: var(--burgundy-100); }
@@ -652,6 +730,7 @@ html[dir='rtl'] .service-card:focus-visible .service-arrow {
 @media (max-width: 940px) {
     .stat-grid, .action-grid, .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .search-form { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .search-form--pros { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .checkout-grid { grid-template-columns: 1fr; }
     .product-detail { grid-template-columns: 1fr; }
     .trust-grid {
@@ -720,9 +799,22 @@ html[dir='rtl'] .service-card:focus-visible .service-arrow {
     .step-number svg { width: 22px; height: 22px; }
     .step-card h3 { font-size: 18px; margin-block-start: 22px; }
     .step-card p { font-size: 14px; }
+    .search-form--pros {
+        gap: 12px;
+        padding: 18px;
+        border-radius: 18px;
+    }
+    .search-form--pros input,
+    .search-form--pros select { min-height: 46px; }
 }
 @media (max-width: 560px) {
     .stat-grid, .action-grid, .card-grid, .search-form { grid-template-columns: 1fr; }
+    .search-form--pros {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 16px;
+        border-radius: 16px;
+    }
     .trust-item {
         min-height: 0;
         padding: 22px 20px;
