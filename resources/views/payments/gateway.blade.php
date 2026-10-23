@@ -9,7 +9,7 @@
 @csrf
 <label>Cardholder name<input name="card_name" value="{{ old('card_name', auth()->user()->name) }}" maxlength="120" required></label>
 <label>Card number<input name="card_number" inputmode="numeric" placeholder="4242 4242 4242 4242" value="{{ old('card_number') }}" required><small class="muted">Use 4242… to approve, 4000 0000 0000 0002 to see a decline.</small></label>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div class="form-columns">
 <label>Expiry (MM/YY)<input name="expiry" placeholder="12/28" value="{{ old('expiry') }}" required></label>
 <label>CVC<input name="cvc" inputmode="numeric" placeholder="123" required></label>
 </div>

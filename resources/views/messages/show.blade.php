@@ -10,7 +10,7 @@
 @endforeach
 </div>
 {{ $messages->links() }}
-<form class="stack-form" style="margin-top:12px" action="{{ route('messages.store', $other) }}" method="post">
+<form class="stack-form message-form" action="{{ route('messages.store', $other) }}" method="post">
 @csrf
 <label>Message<textarea name="body" rows="3" maxlength="2000" required placeholder="Write…"></textarea></label>
 <button class="button button-dark" type="submit">Send</button>

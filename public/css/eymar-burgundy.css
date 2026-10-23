@@ -17,6 +17,18 @@
     --ink: #2c2320;
     --muted: #6f625c;
     --line: #e7ddd6;
+    --field-bg: #fdfaf7;
+    --field-bg-focus: #fff;
+    --field-border: #e1d2cb;
+    --field-border-hover: #c9aca1;
+    --field-height: 50px;
+    --field-radius: 13px;
+    --field-ring: inset 0 1px 2px rgb(56 9 15 / 4%), 0 0 0 3px rgb(123 30 43 / 11%), 0 12px 26px -18px rgb(94 20 32 / 40%);
+    --field-error: #a8322c;
+    --field-error-ring: 0 0 0 3px rgb(168 50 44 / 12%);
+    --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='16.5' fill='%237b1e2b' stroke='%23f3dee1' stroke-opacity='.45' stroke-width='1'/%3E%3Cpath d='M12.5 15.5 18 21l5.5-5.5' fill='none' stroke='%23fff' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --select-arrow-hover: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='16.5' fill='%23c9a227' stroke='%23f6ecd2' stroke-opacity='.8' stroke-width='1'/%3E%3Cpath d='M12.5 15.5 18 21l5.5-5.5' fill='none' stroke='%234a0d17' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --select-arrow-focus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='16.5' fill='%2396293a' stroke='%23f3dee1' stroke-opacity='.55' stroke-width='1'/%3E%3Cpath d='M12.5 15.5 18 21l5.5-5.5' fill='none' stroke='%23fff' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 body {
@@ -625,90 +637,7 @@ html[dir='rtl'] .service-card:focus-visible .service-arrow {
 .listing-card:hover { border-color: #d8c3c6; box-shadow: 0 16px 38px rgb(94 20 32 / 12%); transform: translateY(-3px); }
 .table-wrap th { color: var(--burgundy-900); background: var(--burgundy-50); }
 .table-wrap tbody tr:hover { background: var(--burgundy-50); }
-.stack-form input:focus, .stack-form textarea:focus, .stack-form select:focus,
-.search-form input:focus, .search-form select:focus,
-.inline-form input:focus, .comment-form input:focus {
-    outline: 3px solid rgb(123 30 43 / 18%);
-    border-color: var(--burgundy-600);
-}
-
-/* ---------- Professionals search / filter form ---------- */
-.search-form--pros {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
-    padding: 22px;
-    background:
-        radial-gradient(500px 180px at 100% 0%, rgb(217 182 74 / 8%), transparent 62%),
-        #fff;
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    box-shadow:
-        0 14px 34px -14px rgb(56 9 15 / 22%),
-        inset 0 1px 0 rgb(255 255 255 / 90%);
-}
-.search-form--pros input,
-.search-form--pros select {
-    min-height: 48px;
-    padding: 11px 14px;
-    color: var(--ink);
-    background: var(--cream);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
-}
-.search-form--pros input::placeholder { color: var(--muted); opacity: .85; }
-.search-form--pros input:hover,
-.search-form--pros select:hover { border-color: #d8c3c6; background: #fff; }
-.search-form--pros input:focus,
-.search-form--pros select:focus {
-    background: #fff;
-    border-color: var(--burgundy-600);
-    outline: none;
-    box-shadow: 0 0 0 4px rgb(123 30 43 / 14%);
-}
-.search-form--pros select {
-    appearance: none;
-    padding-inline-end: 38px;
-    background-image:
-        linear-gradient(45deg, transparent 50%, var(--burgundy-700) 50%),
-        linear-gradient(135deg, var(--burgundy-700) 50%, transparent 50%);
-    background-position:
-        calc(100% - 20px) calc(50% - 2px),
-        calc(100% - 14px) calc(50% - 2px);
-    background-size: 6px 6px, 6px 6px;
-    background-repeat: no-repeat;
-}
-html[dir='rtl'] .search-form--pros select {
-    padding-inline-end: 14px;
-    padding-inline-start: 38px;
-    background-position:
-        calc(0% + 20px) calc(50% - 2px),
-        calc(0% + 14px) calc(50% - 2px);
-}
-.search-form--pros select option {
-    padding: 12px 14px;
-    color: var(--burgundy-900);
-    background: #fdf6f4;
-    font-size: 14px;
-}
-.search-form--pros select option:nth-child(odd) {
-    background: #fff;
-}
-.search-form--pros select option:first-child {
-    color: var(--muted);
-    background: #f3e6e7;
-}
-.search-form--pros select option:checked,
-.search-form--pros select option:hover {
-    color: #fff;
-    background: var(--burgundy-700);
-}
-.search-form--pros button {
-    min-height: 48px;
-    border-radius: 12px;
-    box-shadow: 0 10px 22px -8px rgb(94 20 32 / 45%);
-}
-.search-form--pros button:hover { box-shadow: 0 14px 28px -8px rgb(94 20 32 / 58%); }
+/* ---------- Profile and misc accents ---------- */
 .profile-avatar { color: var(--burgundy-700); background: linear-gradient(145deg, var(--burgundy-50), #fff); }
 .profile-role-badge { color: var(--burgundy-800); background: var(--burgundy-50); }
 .profile-save-bar { background: var(--burgundy-50); border-color: var(--burgundy-100); }
@@ -730,7 +659,6 @@ html[dir='rtl'] .search-form--pros select {
 @media (max-width: 940px) {
     .stat-grid, .action-grid, .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .search-form { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .search-form--pros { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .checkout-grid { grid-template-columns: 1fr; }
     .product-detail { grid-template-columns: 1fr; }
     .trust-grid {
@@ -799,22 +727,9 @@ html[dir='rtl'] .search-form--pros select {
     .step-number svg { width: 22px; height: 22px; }
     .step-card h3 { font-size: 18px; margin-block-start: 22px; }
     .step-card p { font-size: 14px; }
-    .search-form--pros {
-        gap: 12px;
-        padding: 18px;
-        border-radius: 18px;
-    }
-    .search-form--pros input,
-    .search-form--pros select { min-height: 46px; }
 }
 @media (max-width: 560px) {
     .stat-grid, .action-grid, .card-grid, .search-form { grid-template-columns: 1fr; }
-    .search-form--pros {
-        grid-template-columns: 1fr;
-        gap: 10px;
-        padding: 16px;
-        border-radius: 16px;
-    }
     .trust-item {
         min-height: 0;
         padding: 22px 20px;
@@ -844,7 +759,6 @@ html[dir='rtl'] .search-form--pros select {
         min-height: 0;
         padding: 24px 22px;
     }
-    .form-columns { grid-template-columns: 1fr; }
     .page-heading-row, .feed-actions, .inline-form, .status-form { flex-wrap: wrap; }
 }
 @media (max-width: 420px) {
@@ -1089,4 +1003,747 @@ html[dir='rtl'] .footer-col a:hover { transform: translateX(-4px); }
 @media (max-width: 560px) {
     .footer-grid { grid-template-columns: 1fr; gap: 28px; }
     .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+/* ==========================================================================
+   Form system — one consistent look for every form and dropdown
+   Covers: auth, profile, projects, products, seller, bookings, schedules,
+   checkout, payments, community, messages and admin search/filter forms.
+   ========================================================================== */
+
+/* ---------- Labels and hints ---------- */
+.app-page .stack-form label,
+.app-page .inline-form label {
+    gap: 8px;
+    color: var(--ink);
+    font-size: 13.5px;
+    font-weight: 700;
+    letter-spacing: .1px;
+    transition: color 160ms ease;
+}
+
+.app-page .stack-form label:has(input:focus),
+.app-page .stack-form label:has(select:focus),
+.app-page .stack-form label:has(textarea:focus) {
+    color: var(--burgundy-800);
+}
+
+.app-page .stack-form label small {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+/* ---------- Text fields, textareas and native dropdowns ---------- */
+.app-page .stack-form input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='hidden']),
+.app-page .stack-form textarea,
+.app-page .stack-form select,
+.app-page .search-form input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='hidden']),
+.app-page .search-form select,
+.app-page .inline-form input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='hidden']),
+.app-page .comment-form input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='hidden']),
+.app-page .status-form select {
+    width: 100%;
+    min-height: var(--field-height);
+    padding: 11px 14px;
+    color: var(--ink);
+    background-color: var(--field-bg);
+    border: 1px solid var(--field-border);
+    border-radius: var(--field-radius);
+    caret-color: var(--burgundy-700);
+    box-shadow: inset 0 1px 2px rgb(56 9 15 / 4%), 0 1px 0 rgb(255 255 255 / 85%);
+    font: inherit;
+    font-size: 14.5px;
+    line-height: 1.45;
+    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.app-page .stack-form textarea {
+    min-height: 112px;
+    padding: 12px 14px;
+    resize: vertical;
+}
+
+.app-page .stack-form input::placeholder,
+.app-page .stack-form textarea::placeholder,
+.app-page .search-form input::placeholder,
+.app-page .inline-form input::placeholder,
+.app-page .comment-form input::placeholder {
+    color: var(--muted);
+    opacity: .72;
+}
+
+.app-page .stack-form input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='hidden']):hover:not(:disabled),
+.app-page .stack-form textarea:hover:not(:disabled),
+.app-page .stack-form select:hover:not(:disabled),
+.app-page .search-form input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='hidden']):hover:not(:disabled),
+.app-page .search-form select:hover:not(:disabled),
+.app-page .inline-form input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='hidden']):hover:not(:disabled),
+.app-page .comment-form input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='hidden']):hover:not(:disabled) {
+    background-color: #fff;
+    border-color: var(--field-border-hover);
+}
+
+.app-page .stack-form input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='hidden']):focus:not(:disabled),
+.app-page .stack-form textarea:focus:not(:disabled),
+.app-page .stack-form select:focus:not(:disabled),
+.app-page .search-form input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='hidden']):focus:not(:disabled),
+.app-page .search-form select:focus:not(:disabled),
+.app-page .inline-form input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='hidden']):focus:not(:disabled),
+.app-page .comment-form input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='hidden']):focus:not(:disabled),
+.app-page .status-form select:focus:not(:disabled) {
+    outline: 0;
+    background-color: var(--field-bg-focus);
+    border-color: var(--burgundy-600);
+    box-shadow: var(--field-ring);
+}
+
+.app-page .stack-form input:user-invalid,
+.app-page .stack-form textarea:user-invalid,
+.app-page .stack-form select:user-invalid {
+    border-color: var(--field-error);
+}
+
+.app-page .stack-form input:user-invalid:focus,
+.app-page .stack-form textarea:user-invalid:focus,
+.app-page .stack-form select:user-invalid:focus {
+    box-shadow: var(--field-error-ring);
+}
+
+.app-page .stack-form input:disabled,
+.app-page .stack-form textarea:disabled,
+.app-page .stack-form select:disabled,
+.app-page .search-form input:disabled,
+.app-page .search-form select:disabled {
+    color: #9b8b84;
+    background-color: #f3eeeb;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+/* ---------- Native select fallback arrow ---------- */
+.app-page .stack-form select,
+.app-page .search-form select,
+.app-page .status-form select {
+    --native-select-arrow: var(--select-arrow);
+    padding-inline: 20px 58px;
+    appearance: none;
+    background-image: var(--native-select-arrow);
+    border-radius: 999px;
+    background-repeat: no-repeat;
+    background-position: right 7px center;
+    background-size: 36px 36px;
+    cursor: pointer;
+}
+
+.app-page .stack-form select:hover:not(:disabled),
+.app-page .search-form select:hover:not(:disabled),
+.app-page .status-form select:hover:not(:disabled) {
+    --native-select-arrow: var(--select-arrow-hover);
+}
+
+.app-page .stack-form select:focus:not(:disabled),
+.app-page .search-form select:focus:not(:disabled),
+.app-page .status-form select:focus:not(:disabled) {
+    --native-select-arrow: var(--select-arrow-focus);
+}
+
+html[dir='rtl'] .app-page .stack-form select,
+html[dir='rtl'] .app-page .search-form select,
+html[dir='rtl'] .app-page .status-form select {
+    background-position: left 7px center;
+}
+
+.app-page input[type='date']::-webkit-calendar-picker-indicator,
+.app-page input[type='time']::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: .55;
+}
+
+.app-page input[type='date']::-webkit-calendar-picker-indicator:hover,
+.app-page input[type='time']::-webkit-calendar-picker-indicator:hover {
+    opacity: .9;
+}
+
+/* ---------- Field icons (decorative, non-interactive) ---------- */
+.app-page .stack-form input[type='email'],
+.app-page .stack-form input[type='password'],
+.app-page .stack-form input[type='tel'],
+.app-page .stack-form input[type='date'],
+.app-page .stack-form input[type='time'] {
+    padding-inline-start: 44px;
+    background-repeat: no-repeat;
+    background-position: left 15px center;
+    background-size: 17px 17px;
+}
+
+.app-page .stack-form input[type='email'] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%239c7f76' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='2.5'/%3E%3Cpath d='m4 7 8 5.5L20 7'/%3E%3C/svg%3E");
+}
+
+.app-page .stack-form input[type='password'] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%239c7f76' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='10' width='16' height='11' rx='2.5'/%3E%3Cpath d='M8 10V7a4 4 0 0 1 8 0v3'/%3E%3C/svg%3E");
+}
+
+.app-page .stack-form input[type='tel'] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%239c7f76' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z'/%3E%3C/svg%3E");
+}
+
+.app-page .stack-form input[type='date'] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%239c7f76' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='16' rx='2.5'/%3E%3Cpath d='M8 3v4M16 3v4M3 10h18'/%3E%3C/svg%3E");
+}
+
+.app-page .stack-form input[type='time'] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%239c7f76' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 7v5l3.5 2'/%3E%3C/svg%3E");
+}
+
+.app-page .search-form input[name='q'],
+.app-page .search-form input[name='location'] {
+    padding-inline-start: 44px;
+    background-repeat: no-repeat;
+    background-position: left 15px center;
+    background-size: 17px 17px;
+}
+
+.app-page .search-form input[name='q'] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%239c7f76' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m16.5 16.5 4 4'/%3E%3C/svg%3E");
+}
+
+.app-page .search-form input[name='location'] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%239c7f76' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 10c0 5.2-8 11-8 11S4 15.2 4 10a8 8 0 1 1 16 0Z'/%3E%3Ccircle cx='12' cy='10' r='2.6'/%3E%3C/svg%3E");
+}
+
+html[dir='rtl'] .app-page .stack-form input[type='email'],
+html[dir='rtl'] .app-page .stack-form input[type='password'],
+html[dir='rtl'] .app-page .stack-form input[type='tel'],
+html[dir='rtl'] .app-page .stack-form input[type='date'],
+html[dir='rtl'] .app-page .stack-form input[type='time'],
+html[dir='rtl'] .app-page .search-form input[name='q'],
+html[dir='rtl'] .app-page .search-form input[name='location'] {
+    background-position: right 15px center;
+}
+
+/* ---------- Checkboxes and radio buttons ---------- */
+.app-page .stack-form input[type='checkbox'],
+.app-page .stack-form input[type='radio'],
+.app-page .search-form input[type='checkbox'],
+.app-page .search-form input[type='radio'] {
+    display: inline-grid;
+    width: 20px;
+    height: 20px;
+    min-height: 0;
+    flex: 0 0 auto;
+    place-content: center;
+    margin: 0;
+    appearance: none;
+    background-color: #fff;
+    border: 1.5px solid var(--field-border-hover);
+    border-radius: 6px;
+    box-shadow: inset 0 1px 2px rgb(56 9 15 / 6%);
+    cursor: pointer;
+    transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.app-page .stack-form input[type='radio'],
+.app-page .search-form input[type='radio'] {
+    border-radius: 50%;
+}
+
+.app-page .stack-form input[type='checkbox']:hover,
+.app-page .stack-form input[type='radio']:hover,
+.app-page .search-form input[type='checkbox']:hover,
+.app-page .search-form input[type='radio']:hover {
+    border-color: var(--burgundy-600);
+}
+
+.app-page .stack-form input[type='checkbox']:checked,
+.app-page .stack-form input[type='radio']:checked,
+.app-page .search-form input[type='checkbox']:checked,
+.app-page .search-form input[type='radio']:checked {
+    border-color: var(--burgundy-700);
+    background-color: var(--burgundy-700);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.2 4.2L19 7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px 12px;
+    box-shadow: 0 4px 10px -4px rgb(94 20 32 / 48%);
+}
+
+.app-page .stack-form input[type='radio']:checked,
+.app-page .search-form input[type='radio']:checked {
+    background-image: radial-gradient(circle, #fff 0 3px, transparent 3.5px);
+}
+
+.app-page .stack-form input[type='checkbox']:focus-visible,
+.app-page .stack-form input[type='radio']:focus-visible,
+.app-page .search-form input[type='checkbox']:focus-visible,
+.app-page .search-form input[type='radio']:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 3px rgb(123 30 43 / 16%);
+}
+
+.app-page .check-row {
+    display: flex !important;
+    align-items: center;
+    gap: 11px !important;
+    padding: 12px 14px;
+    background: linear-gradient(180deg, #fff, var(--field-bg));
+    border: 1px solid var(--field-border);
+    border-radius: var(--field-radius);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 90%);
+    cursor: pointer;
+    transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.app-page .check-row:hover {
+    background: #fff;
+    border-color: var(--field-border-hover);
+    box-shadow: 0 8px 18px -14px rgb(94 20 32 / 35%), inset 0 1px 0 rgb(255 255 255 / 90%);
+}
+
+.app-page .check-row:has(input:checked) {
+    background: linear-gradient(180deg, #fffdf9, #fbf3e2);
+    border-color: rgb(201 162 39 / 45%);
+}
+
+.app-page .check-row:focus-within {
+    border-color: var(--burgundy-600);
+    box-shadow: var(--field-ring);
+}
+
+.app-page .check-row span {
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ---------- File inputs ---------- */
+.app-page .stack-form input[type='file'] {
+    width: 100%;
+    min-height: var(--field-height);
+    padding: 8px 10px;
+    color: var(--muted);
+    background: var(--field-bg);
+    border: 1px dashed var(--field-border);
+    border-radius: var(--field-radius);
+    cursor: pointer;
+    font: inherit;
+    font-size: 13px;
+    transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.app-page .stack-form input[type='file']:hover,
+.app-page .stack-form input[type='file']:focus {
+    background: #fff;
+    border-color: var(--burgundy-600);
+}
+
+.app-page .stack-form input[type='file']:focus {
+    outline: 0;
+    box-shadow: var(--field-ring);
+}
+
+.app-page .stack-form input[type='file']::file-selector-button {
+    margin-inline-end: 12px;
+    padding: 7px 14px;
+    color: #fff;
+    background: linear-gradient(145deg, var(--burgundy-600), var(--burgundy-800));
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 5px 14px rgb(94 20 32 / 22%);
+    cursor: pointer;
+    font: inherit;
+    font-size: 12.5px;
+    font-weight: 700;
+    transition: background 160ms ease, box-shadow 160ms ease;
+}
+
+.app-page .stack-form input[type='file']::file-selector-button:hover {
+    background: linear-gradient(145deg, var(--burgundy-700), var(--burgundy-900));
+    box-shadow: 0 7px 18px rgb(94 20 32 / 30%);
+}
+
+/* Keep the custom upload cards compact. */
+.app-page .file-upload-card input[type='file'] {
+    min-height: 0;
+    padding: 4px 0 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 12px;
+}
+
+.app-page .file-upload-card input[type='file']::file-selector-button {
+    margin-inline-end: 8px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 11.5px;
+}
+
+/* ---------- Layout helpers used by forms ---------- */
+.app-page .form-columns > *,
+.app-page .form-columns--3 > * {
+    min-width: 0;
+}
+
+.app-page .form-columns--3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.app-page .stack-form fieldset.stack-form {
+    padding: 20px 18px 18px;
+    background: linear-gradient(180deg, #fffdfa, #fdf8f3);
+    border: 1px solid var(--line);
+    border-inline-start: 3px solid rgb(201 162 39 / 55%);
+    border-radius: 14px;
+}
+
+.app-page .stack-form fieldset.stack-form > legend {
+    padding-inline: 8px;
+    color: var(--burgundy-800);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .7px;
+    text-transform: uppercase;
+}
+
+.app-page .form-card {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(420px 220px at 100% 0%, rgb(201 162 39 / 9%), transparent 68%),
+        radial-gradient(360px 220px at 0% 100%, rgb(123 30 43 / 5%), transparent 70%),
+        linear-gradient(180deg, #fff, #fdfaf7);
+    border-color: #eadfd8;
+    border-radius: 20px;
+    box-shadow:
+        0 24px 60px -28px rgb(56 9 15 / 26%),
+        0 1px 0 rgb(255 255 255 / 95%) inset;
+    animation: content-enter 420ms cubic-bezier(.2, .75, .25, 1) both;
+}
+
+.app-page .form-card::before {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--burgundy-900), var(--burgundy-600) 38%, var(--gold-500) 72%, var(--gold-400));
+    content: '';
+}
+
+.app-page .form-card .page-heading {
+    padding-block-end: 16px;
+    margin-block-end: 22px;
+    border-block-end: 1px solid var(--line);
+}
+
+.app-page .narrow-card .stack-form > .button {
+    width: 100%;
+    margin-block-start: 4px;
+}
+
+.app-page .booking-request-form {
+    margin-block-start: 14px;
+}
+
+.app-page .booking-request-form h3 {
+    margin: 0 0 2px;
+    color: var(--burgundy-900);
+    font-size: 18px;
+}
+
+.app-page .message-form {
+    margin-block-start: 12px;
+}
+
+.app-page .form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ---------- Search / filter panels ---------- */
+.app-page .search-form {
+    gap: 12px;
+    padding: 20px;
+    background:
+        radial-gradient(520px 190px at 100% 0%, rgb(201 162 39 / 10%), transparent 62%),
+        radial-gradient(420px 170px at 0% 100%, rgb(123 30 43 / 4%), transparent 70%),
+        linear-gradient(180deg, #fff, #fdfaf7);
+    border: 1px solid #eadfd8;
+    border-radius: 20px;
+    box-shadow:
+        0 22px 52px -28px rgb(56 9 15 / 28%),
+        inset 0 1px 0 rgb(255 255 255 / 95%);
+    animation: content-enter 420ms cubic-bezier(.2, .75, .25, 1) both;
+}
+
+.app-page .search-form--pros {
+    padding: 18px;
+    border-radius: 18px;
+}
+
+.app-page .search-form > .button {
+    width: 100%;
+    min-height: var(--field-height);
+    border-radius: var(--field-radius);
+}
+
+@media (max-width: 940px) {
+    .app-page .form-columns--3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .app-page .stack-form {
+        gap: 14px;
+    }
+
+    .app-page .form-columns,
+    .app-page .form-columns--3 {
+        grid-template-columns: 1fr;
+    }
+
+    .app-page .search-form,
+    .app-page .search-form--pros {
+        gap: 10px;
+        padding: 14px;
+        border-radius: 16px;
+    }
+
+    .app-page .form-actions > .button {
+        width: 100%;
+    }
+}
+
+/* ---------- Enhanced dropdown trigger and option menu ---------- */
+.select-shell {
+    position: relative;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.select-shell > select.select-control {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 3;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    opacity: 0 !important;
+    background: transparent !important;
+    appearance: none;
+    cursor: pointer;
+}
+
+.select-shell.is-disabled > select.select-control {
+    cursor: not-allowed;
+}
+
+.select-display {
+    --select-display-arrow: var(--select-arrow);
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    width: 100%;
+    min-height: var(--field-height);
+    padding-block: 11px;
+    padding-inline: 20px 58px;
+    color: var(--ink);
+    background-color: var(--field-bg);
+    border: 1px solid var(--field-border);
+    border-radius: 999px;
+    box-shadow: inset 0 1px 2px rgb(56 9 15 / 4%), 0 1px 0 rgb(255 255 255 / 85%);
+    font: inherit;
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.4;
+    user-select: none;
+    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.select-display__value {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.select-display::after {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-end: 7px;
+    width: 36px;
+    height: 36px;
+    background-image: var(--select-display-arrow);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 36px 36px;
+    content: '';
+    transform: translateY(-50%);
+    transition: transform 180ms ease;
+}
+
+.select-shell:hover:not(.is-disabled) .select-display {
+    background-color: #fff;
+    border-color: var(--field-border-hover);
+}
+
+.select-shell:hover:not(.is-disabled):not(.is-open) .select-display {
+    --select-display-arrow: var(--select-arrow-hover);
+}
+
+.select-shell:focus-within .select-display,
+.select-shell.is-open .select-display {
+    background-color: var(--field-bg-focus);
+    border-color: var(--burgundy-600);
+    box-shadow: var(--field-ring);
+    --select-display-arrow: var(--select-arrow-focus);
+}
+
+.select-shell.is-open .select-display::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.select-shell.is-placeholder .select-display__value {
+    color: var(--muted);
+    font-weight: 500;
+    opacity: .82;
+}
+
+.select-shell.is-disabled .select-display {
+    color: #9b8b84;
+    background-color: #f3eeeb;
+    opacity: .72;
+    cursor: not-allowed;
+}
+
+.select-shell.is-disabled .select-display::after {
+    filter: grayscale(1);
+    opacity: .55;
+}
+
+.select-menu {
+    position: fixed;
+    z-index: 9999;
+    display: block;
+    box-sizing: border-box;
+    max-height: min(300px, 60vh);
+    padding: 6px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: linear-gradient(180deg, #fff, #fdfaf7);
+    border: 1px solid #eadfd8;
+    border-radius: 18px;
+    box-shadow:
+        0 22px 48px -16px rgb(56 9 15 / 34%),
+        0 2px 8px rgb(56 9 15 / 8%),
+        inset 0 1px 0 rgb(255 255 255 / 95%);
+    scrollbar-color: var(--burgundy-100) transparent;
+    scrollbar-width: thin;
+    animation: select-menu-in 160ms cubic-bezier(.2, .75, .25, 1) both;
+}
+
+.select-option {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 16px;
+    margin: 2px 0;
+    color: var(--ink);
+    background: transparent;
+    border: 0;
+    border-radius: 999px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: start;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 140ms ease, color 140ms ease;
+}
+
+.select-option__label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.select-option:hover:not(:disabled),
+.select-option:focus-visible {
+    color: var(--burgundy-800);
+    background: var(--burgundy-50);
+    outline: 0;
+}
+
+.select-option[aria-selected='true'] {
+    color: var(--burgundy-900);
+    background: linear-gradient(135deg, var(--gold-100), #fbf4e3);
+}
+
+.select-option[aria-selected='true']::after {
+    flex: 0 0 15px;
+    width: 15px;
+    height: 15px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15'%3E%3Cpath d='m2.5 7.5 3.2 3.2 6.8-6.8' fill='none' stroke='%235e1420' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+    content: '';
+}
+
+.select-option:disabled {
+    opacity: .42;
+    cursor: not-allowed;
+}
+
+.select-menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.select-menu::-webkit-scrollbar-thumb {
+    background: var(--burgundy-100);
+    border: 2px solid #fff;
+    border-radius: 999px;
+}
+
+@keyframes select-menu-in {
+    from {
+        opacity: 0;
+        transform: translateY(-4px) scale(.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 560px) {
+    .select-menu {
+        max-height: min(260px, 55vh);
+    }
+
+    .select-option {
+        padding: 12px 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .select-menu {
+        animation: none;
+    }
 }

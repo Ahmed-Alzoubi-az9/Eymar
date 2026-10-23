@@ -37,10 +37,10 @@
                 @endif
             </div>
             @if (auth()->id() !== $provider->id && $provider->serviceProviderProfile)
-                <form class="stack-form form-card" style="margin-top:12px" action="{{ route('bookings.store', $provider) }}" method="post">
+                <form class="stack-form form-card booking-request-form" action="{{ route('bookings.store', $provider) }}" method="post">
                     @csrf
                     <h3>Request appointment (hourly)</h3>
-                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+                    <div class="form-columns form-columns--3">
                         <label>Date<input type="date" name="date" min="{{ now()->toDateString() }}" required></label>
                         <label>Start<input type="time" name="start_time" required></label>
                         <label>Minutes<input type="number" name="duration_minutes" min="30" max="480" step="30" value="60" required></label>

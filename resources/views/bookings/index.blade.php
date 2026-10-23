@@ -11,7 +11,7 @@
 <p>Customer: {{ $b->customer->name }} · Provider: {{ $b->provider->business_name ?: $b->provider->name }}</p>
 @if ($b->notes)<p class="muted">{{ $b->notes }}</p>@endif
 @if ($b->status === 'pending' && $b->provider_id === auth()->id())
-<form action="{{ route('bookings.respond', $b) }}" method="post" style="display:flex;gap:8px">@csrf @method('patch')
+<form class="form-actions" action="{{ route('bookings.respond', $b) }}" method="post">@csrf @method('patch')
 <button class="button button-dark" name="status" value="accepted" type="submit">Accept</button>
 <button class="button button-outline" name="status" value="rejected" type="submit">Reject</button>
 </form>

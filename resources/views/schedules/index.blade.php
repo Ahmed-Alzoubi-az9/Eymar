@@ -6,12 +6,12 @@
 <section class="form-card">
 <form class="stack-form" action="{{ route('schedules.store') }}" method="post">
 @csrf
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+<div class="form-columns form-columns--3">
 <label>Date<input type="date" name="date" min="{{ now()->toDateString() }}" required></label>
 <label>Start<input type="time" name="start_time" required></label>
 <label>End<input type="time" name="end_time" required></label>
 </div>
-<label style="display:flex;gap:8px;align-items:center"><input type="checkbox" name="is_available" value="1" checked> Available for booking</label>
+<label class="check-row"><input type="checkbox" name="is_available" value="1" checked> <span>Available for booking</span></label>
 <button class="button button-dark" type="submit">Save slot</button>
 </form>
 </section>

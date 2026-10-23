@@ -116,6 +116,7 @@
                 </div>
             </div>
         </footer>
+        <script src="{{ asset('js/custom-selects.js') }}"></script>
         <script>
         (function () {
             var btn = document.querySelector('[data-nav-toggle]');
