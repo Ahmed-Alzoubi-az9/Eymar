@@ -1200,7 +1200,7 @@ html[dir='rtl'] .app-page .status-form select {
 
 .app-page .search-form input[name='q'],
 .app-page .search-form input[name='location'] {
-    padding-inline-start: 44px;
+    padding-inline-start: 44px !important;
     background-repeat: no-repeat;
     background-position: left 15px center;
     background-size: 17px 17px;
@@ -1221,7 +1221,10 @@ html[dir='rtl'] .app-page .stack-form input[type='date'],
 html[dir='rtl'] .app-page .stack-form input[type='time'],
 html[dir='rtl'] .app-page .search-form input[name='q'],
 html[dir='rtl'] .app-page .search-form input[name='location'] {
-    background-position: right 15px center;
+    padding-inline-start: 18px !important;
+    padding-inline-end: 68px !important;
+    background-position: right 28px center;
+    text-indent: 6px;
 }
 
 /* ---------- Checkboxes and radio buttons ---------- */
