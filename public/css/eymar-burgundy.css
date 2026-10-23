@@ -1172,10 +1172,17 @@ html[dir='rtl'] .app-page .status-form select {
 .app-page .stack-form input[type='tel'],
 .app-page .stack-form input[type='date'],
 .app-page .stack-form input[type='time'] {
-    padding-inline-start: 44px;
+    padding-inline-start: 56px !important;
     background-repeat: no-repeat;
-    background-position: left 15px center;
+    background-position: left 24px center;
     background-size: 17px 17px;
+    text-indent: 2px;
+    text-indent: 6px;
+}
+
+.app-page .stack-form input[type='email']::placeholder,
+.app-page .stack-form input[type='password']::placeholder {
+    padding-inline-start: 2px;
 }
 
 .app-page .stack-form input[type='email'] {
@@ -1218,7 +1225,13 @@ html[dir='rtl'] .app-page .stack-form input[type='email'],
 html[dir='rtl'] .app-page .stack-form input[type='password'],
 html[dir='rtl'] .app-page .stack-form input[type='tel'],
 html[dir='rtl'] .app-page .stack-form input[type='date'],
-html[dir='rtl'] .app-page .stack-form input[type='time'],
+html[dir='rtl'] .app-page .stack-form input[type='time'] {
+    padding-inline-start: 18px !important;
+    padding-inline-end: 56px !important;
+    background-position: right 24px center;
+    text-indent: 2px;
+}
+
 html[dir='rtl'] .app-page .search-form input[name='q'],
 html[dir='rtl'] .app-page .search-form input[name='location'] {
     padding-inline-start: 18px !important;

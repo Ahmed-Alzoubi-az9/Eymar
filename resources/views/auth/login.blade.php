@@ -11,10 +11,10 @@
         <form action="{{ route('login.store') }}" method="post" class="stack-form">
             @csrf
             <label>{{ __('messages.email') }}
-                <input name="email" type="email" value="{{ old('email') }}" autocomplete="email" required autofocus>
+                <input name="email" type="email" value="{{ old('email') }}" autocomplete="email" placeholder="{{ __('messages.email') }}" required autofocus>
             </label>
             <label>{{ __('messages.password') }}
-                <input name="password" type="password" autocomplete="current-password" required>
+                <input name="password" type="password" autocomplete="current-password" placeholder="{{ __('messages.password') }}" required>
             </label>
             <label class="check-row">
                 <input name="remember" type="checkbox" value="1">

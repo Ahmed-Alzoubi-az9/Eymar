@@ -17,7 +17,7 @@
                 <input name="username" value="{{ old('username') }}" autocomplete="username" minlength="3" maxlength="32" required>
             </label>
             <label>{{ __('messages.email') }}
-                <input name="email" type="email" value="{{ old('email') }}" autocomplete="email" maxlength="255" required>
+                <input name="email" type="email" value="{{ old('email') }}" autocomplete="email" maxlength="255" placeholder="{{ __('messages.email') }}" required>
             </label>
             <label>{{ __('messages.account_type') }}
                 <select name="role" data-account-role required>
@@ -57,10 +57,10 @@
                 </label>
             </fieldset>
             <label>{{ __('messages.password') }}
-                <input name="password" type="password" autocomplete="new-password" minlength="12" required>
+                <input name="password" type="password" autocomplete="new-password" minlength="12" placeholder="{{ __('messages.password') }}" required>
             </label>
             <label>{{ __('messages.confirm_password') }}
-                <input name="password_confirmation" type="password" autocomplete="new-password" required>
+                <input name="password_confirmation" type="password" autocomplete="new-password" placeholder="{{ __('messages.confirm_password') }}" required>
             </label>
             <button class="button button-dark" type="submit">{{ __('messages.register') }}</button>
         </form>
