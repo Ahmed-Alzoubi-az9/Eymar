@@ -4,7 +4,6 @@
 
 @section('content')
     <div class="page-heading">
-        <p class="eyebrow">{{ __('messages.brand') }}</p>
         <h1>{{ __('messages.browse_professionals') }}</h1>
     </div>
     <form class="search-form search-form--pros" method="get" action="{{ route('professionals.index') }}">

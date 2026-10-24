@@ -5,7 +5,6 @@
 @section('content')
     <section class="form-card narrow-card">
         <div class="page-heading">
-            <p class="eyebrow">{{ __('messages.brand') }}</p>
             <h1>{{ __('messages.welcome_back') }}</h1>
         </div>
         <form action="{{ route('login.store') }}" method="post" class="stack-form">

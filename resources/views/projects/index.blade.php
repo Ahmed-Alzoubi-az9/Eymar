@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="page-heading page-heading-row">
-        <div><p class="eyebrow">{{ __('messages.brand') }}</p><h1>{{ __('messages.projects') }}</h1></div>
+        <div><h1>{{ __('messages.projects') }}</h1></div>
         @if (auth()->user()->role === 'customer')
             <a class="button button-dark" href="{{ route('projects.create') }}">{{ __('messages.post_project') }}</a>
         @endif

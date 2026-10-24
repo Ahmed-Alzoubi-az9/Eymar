@@ -5,7 +5,6 @@
 @section('content')
     <section class="form-card narrow-card">
         <div class="page-heading">
-            <p class="eyebrow">{{ __('messages.brand') }}</p>
             <h1>{{ __('messages.reset_password') }}</h1>
         </div>
         <form action="{{ route('password.update') }}" method="post" class="stack-form">

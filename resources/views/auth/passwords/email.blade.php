@@ -5,7 +5,6 @@
 @section('content')
     <section class="form-card narrow-card">
         <div class="page-heading">
-            <p class="eyebrow">{{ __('messages.brand') }}</p>
             <h1>{{ __('messages.forgot_password') }}</h1>
             <p>{{ __('messages.password_reset_instructions') }}</p>
         </div>

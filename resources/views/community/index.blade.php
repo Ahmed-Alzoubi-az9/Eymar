@@ -3,7 +3,7 @@
 @section('title', __('messages.community'))
 
 @section('content')
-    <div class="page-heading"><p class="eyebrow">{{ __('messages.brand') }}</p><h1>{{ __('messages.community') }}</h1></div>
+    <div class="page-heading"><h1>{{ __('messages.community') }}</h1></div>
     @auth
         <section class="form-card community-compose">
             <h2>{{ __('messages.create_post') }}</h2>
