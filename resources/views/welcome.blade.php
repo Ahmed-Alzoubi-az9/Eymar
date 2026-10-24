@@ -341,11 +341,6 @@
                     </span>
                     <span>© {{ now()->year }}</span>
                 </p>
-                <nav class="footer-links" aria-label="Footer navigation" data-aria-en="Footer navigation" data-aria-ar="روابط التذييل">
-                    <a href="#services" data-en="Services" data-ar="الخدمات">Services</a>
-                    <a href="#how-it-works" data-en="How it works" data-ar="كيف يعمل">How it works</a>
-                    <a href="#for-professionals" data-en="For professionals" data-ar="لأصحاب المهن">For professionals</a>
-                </nav>
             </div>
         </footer>
         <script>
