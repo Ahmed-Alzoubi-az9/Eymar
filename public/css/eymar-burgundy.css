@@ -1074,6 +1074,14 @@ html[dir='rtl'] .footer-col a:hover { transform: translateX(-4px); }
     opacity: .72;
 }
 
+html[dir='rtl'] .app-page .stack-form input::placeholder,
+html[dir='rtl'] .app-page .stack-form textarea::placeholder,
+html[dir='rtl'] .app-page .search-form input::placeholder,
+html[dir='rtl'] .app-page .inline-form input::placeholder,
+html[dir='rtl'] .app-page .comment-form input::placeholder {
+    text-align: start;
+}
+
 .app-page .stack-form input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='hidden']):hover:not(:disabled),
 .app-page .stack-form textarea:hover:not(:disabled),
 .app-page .stack-form select:hover:not(:disabled),
@@ -1176,8 +1184,7 @@ html[dir='rtl'] .app-page .status-form select {
     background-repeat: no-repeat;
     background-position: left 24px center;
     background-size: 17px 17px;
-    text-indent: 2px;
-    text-indent: 6px;
+    text-align: start;
 }
 
 .app-page .stack-form input[type='email']::placeholder,
@@ -1226,18 +1233,14 @@ html[dir='rtl'] .app-page .stack-form input[type='password'],
 html[dir='rtl'] .app-page .stack-form input[type='tel'],
 html[dir='rtl'] .app-page .stack-form input[type='date'],
 html[dir='rtl'] .app-page .stack-form input[type='time'] {
-    padding-inline-start: 18px !important;
-    padding-inline-end: 56px !important;
-    background-position: right 24px center;
-    text-indent: 2px;
+    padding-inline-start: 68px !important;
+    background-position: left 24px center;
 }
 
 html[dir='rtl'] .app-page .search-form input[name='q'],
 html[dir='rtl'] .app-page .search-form input[name='location'] {
-    padding-inline-start: 18px !important;
-    padding-inline-end: 68px !important;
-    background-position: right 28px center;
-    text-indent: 6px;
+    padding-inline-start: 55px !important;
+    background-position: right 15px center;
 }
 
 /* ---------- Checkboxes and radio buttons ---------- */
