@@ -150,7 +150,27 @@ body {
 .art-backdrop { background: linear-gradient(160deg, rgb(217 182 74 / 35%), rgb(255 255 255 / 10%)); }
 .art-backdrop::before, .art-backdrop::after { border-color: rgb(217 182 74 / 35%); }
 .art-label { color: var(--burgundy-900); }
-.project-card { border-top: 4px solid var(--gold-500); }
+.project-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgb(94 20 32 / 6%);
+    transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+.project-card:hover {
+    border-color: rgb(201 162 39 / 45%);
+    box-shadow: 0 16px 34px rgb(56 9 15 / 14%);
+}
+.project-card-label {
+    display: inline-flex;
+    padding: 6px 9px;
+    color: var(--burgundy-800);
+    background: var(--gold-100);
+    border-radius: 999px;
+    font-size: 9px;
+    letter-spacing: .9px;
+}
+.project-card strong { color: var(--burgundy-900); }
 /* Direction-agnostic centering: inset-inline-start becomes `right` in RTL,
    which breaks translate(-50%) centering — pin physical `left` instead. */
 .hero-art { overflow: clip; }
@@ -167,7 +187,16 @@ body {
     0%, 100% { translate: 0 0; }
     50% { translate: 0 -6px; }
 }
-.project-tags span { color: var(--burgundy-800); background: var(--burgundy-50); }
+.project-tags span {
+    transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
+    color: var(--burgundy-800);
+    background: var(--burgundy-50);
+}
+.project-card:hover .project-tags span {
+    color: var(--burgundy-900);
+    background: var(--gold-100);
+    transform: translateY(-2px);
+}
 
 /* ---------- Trust strip / services ---------- */
 .trust-grid {
