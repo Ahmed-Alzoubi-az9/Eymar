@@ -306,12 +306,12 @@
                     </a>
                     <p class="footer-about" data-en="One marketplace for construction materials, equipment, machinery and trusted professionals across Jordan." data-ar="سوق واحد لمواد البناء والمعدات والآليات والحرفيين الموثوقين في الأردن.">One marketplace for construction materials, equipment, machinery and trusted professionals across Jordan.</p>
                     <div class="footer-social">
-                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on Facebook" title="Facebook"><x-icon name="facebook" /></a>
-                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on Instagram" title="Instagram"><x-icon name="instagram" /></a>
-                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on X" title="X"><x-icon name="x" /></a>
-                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on LinkedIn" title="LinkedIn"><x-icon name="linkedin" /></a>
-                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on YouTube" title="YouTube"><x-icon name="youtube" /></a>
-                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on WhatsApp" title="WhatsApp"><x-icon name="whatsapp" /></a>
+                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on Facebook" data-aria-en="Eymar on Facebook" data-aria-ar="إعمار على فيسبوك" title="Facebook"><x-icon name="facebook" /></a>
+                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on Instagram" data-aria-en="Eymar on Instagram" data-aria-ar="إعمار على انستغرام" title="Instagram"><x-icon name="instagram" /></a>
+                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on X" data-aria-en="Eymar on X" data-aria-ar="إعمار على X" title="X"><x-icon name="x" /></a>
+                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on LinkedIn" data-aria-en="Eymar on LinkedIn" data-aria-ar="إعمار على لينكدإن" title="LinkedIn"><x-icon name="linkedin" /></a>
+                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on YouTube" data-aria-en="Eymar on YouTube" data-aria-ar="إعمار على يوتيوب" title="YouTube"><x-icon name="youtube" /></a>
+                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on WhatsApp" data-aria-en="Eymar on WhatsApp" data-aria-ar="إعمار على واتساب" title="WhatsApp"><x-icon name="whatsapp" /></a>
                     </div>
                 </div>
                 <nav class="footer-col" aria-label="Explore">
@@ -328,14 +328,14 @@
                 </nav>
                 <div class="footer-col" aria-label="Contact">
                     <h3 data-en="Contact" data-ar="تواصل">Contact</h3>
-                    <span class="footer-contact"><x-icon name="pin" /> Amman, Jordan</span>
+                    <span class="footer-contact"><x-icon name="pin" /> <span data-en="Amman, Jordan" data-ar="عمّان، الأردن">Amman, Jordan</span></span>
                     <a class="footer-contact" href="mailto:hello@eymar.jo"><x-icon name="mail" /> hello@eymar.jo</a>
                     <span class="footer-contact"><x-icon name="phone" /> <span dir="ltr">+962 7 9000 0000</span></span>
                 </div>
             </div>
             <div class="container footer-bottom">
                 <p class="footer-note">
-                    <strong>Eymar</strong>
+                    <strong data-en="Eymar" data-ar="إعمار">Eymar</strong>
                     <span data-en=" — Better work, built together." data-ar=" — إنجاز أفضل، نصنعه معاً.">
                         — Better work, built together.
                     </span>

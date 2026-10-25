@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="theme-color" content="#4a0d17">
-        <title>@yield('title', __('messages.brand')) — Eymar</title>
+        <title>@yield('title', __('messages.brand')) — {{ __('messages.brand') }}</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <link rel="stylesheet" href="{{ asset('css/eymar-burgundy.css') }}">
     </head>
@@ -17,7 +17,7 @@
                     <x-icon name="building" class="brand-mark" />
                     <span class="brand-text"><span class="brand-word">{{ __('messages.brand') }}</span><small class="brand-tag">{{ __('messages.brand_tag') }}</small></span>
                 </a>
-                <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+                <button class="nav-toggle" type="button" aria-label="{{ __('messages.menu') }}" aria-expanded="false" data-nav-toggle>
                     <x-icon name="menu" class="icon-open" />
                     <x-icon name="close" class="icon-close" />
                 </button>
@@ -36,11 +36,11 @@
                     </a>
                     @auth
                         <a class="icon-link" href="{{ route('dashboard') }}" aria-label="{{ __('messages.dashboard') }}" title="{{ __('messages.dashboard') }}"><x-icon name="dashboard" /></a>
-                        <a class="icon-link" href="{{ route('messages.index') }}" aria-label="Messages" title="Messages"><x-icon name="chat" />@if (auth()->user()->unreadMessagesCount() > 0)<span class="badge">{{ auth()->user()->unreadMessagesCount() }}</span>@endif</a>
-                        <a class="icon-link" href="{{ route('bookings.index') }}" aria-label="Appointments" title="Appointments"><x-icon name="briefcase" /></a>
+                        <a class="icon-link" href="{{ route('messages.index') }}" aria-label="{{ __('messages.messages_label') }}" title="{{ __('messages.messages_label') }}"><x-icon name="chat" />@if (auth()->user()->unreadMessagesCount() > 0)<span class="badge">{{ auth()->user()->unreadMessagesCount() }}</span>@endif</a>
+                        <a class="icon-link" href="{{ route('bookings.index') }}" aria-label="{{ __('messages.appointments_label') }}" title="{{ __('messages.appointments_label') }}"><x-icon name="briefcase" /></a>
                         @if (auth()->user()->isServiceProvider())
-                            <a class="icon-link" href="{{ route('schedules.index') }}" aria-label="Schedule" title="Schedule"><x-icon name="calendar" /></a>
-                            <a class="icon-link" href="{{ route('portfolio.index') }}" aria-label="Portfolio" title="Portfolio"><x-icon name="package" /></a>
+                            <a class="icon-link" href="{{ route('schedules.index') }}" aria-label="{{ __('messages.schedule_label') }}" title="{{ __('messages.schedule_label') }}"><x-icon name="calendar" /></a>
+                            <a class="icon-link" href="{{ route('portfolio.index') }}" aria-label="{{ __('messages.portfolio_label') }}" title="{{ __('messages.portfolio_label') }}"><x-icon name="package" /></a>
                         @endif
                         <a class="icon-link" href="{{ route('profile.edit') }}" aria-label="{{ __('messages.edit_profile') }}" title="{{ __('messages.edit_profile') }}"><x-icon name="user" /></a>
                         <a class="icon-link" href="{{ route('cart.index') }}" aria-label="{{ __('messages.cart') }}" title="{{ __('messages.cart') }}"><x-icon name="shopping-bag" /></a>
@@ -76,39 +76,39 @@
                         <x-icon name="building" class="brand-mark" />
                         <span class="brand-text"><span class="brand-word">{{ __('messages.brand') }}</span><small class="brand-tag">{{ __('messages.brand_tag') }}</small></span>
                     </a>
-                    <p class="footer-about">One marketplace for construction materials, equipment, machinery and trusted professionals across Jordan.</p>
+                    <p class="footer-about">{{ __('messages.footer_about') }}</p>
                     <div class="footer-social">
-                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on Facebook" title="Facebook"><x-icon name="facebook" /></a>
-                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on Instagram" title="Instagram"><x-icon name="instagram" /></a>
-                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on X" title="X"><x-icon name="x" /></a>
-                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on LinkedIn" title="LinkedIn"><x-icon name="linkedin" /></a>
-                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on YouTube" title="YouTube"><x-icon name="youtube" /></a>
-                        <a class="social-btn social-btn-lg" href="#" aria-label="Eymar on WhatsApp" title="WhatsApp"><x-icon name="whatsapp" /></a>
+                        <a class="social-btn social-btn-lg" href="#" aria-label="{{ __('messages.social_link', ['brand' => __('messages.brand'), 'platform' => 'Facebook']) }}" title="Facebook"><x-icon name="facebook" /></a>
+                        <a class="social-btn social-btn-lg" href="#" aria-label="{{ __('messages.social_link', ['brand' => __('messages.brand'), 'platform' => 'Instagram']) }}" title="Instagram"><x-icon name="instagram" /></a>
+                        <a class="social-btn social-btn-lg" href="#" aria-label="{{ __('messages.social_link', ['brand' => __('messages.brand'), 'platform' => 'X']) }}" title="X"><x-icon name="x" /></a>
+                        <a class="social-btn social-btn-lg" href="#" aria-label="{{ __('messages.social_link', ['brand' => __('messages.brand'), 'platform' => 'LinkedIn']) }}" title="LinkedIn"><x-icon name="linkedin" /></a>
+                        <a class="social-btn social-btn-lg" href="#" aria-label="{{ __('messages.social_link', ['brand' => __('messages.brand'), 'platform' => 'YouTube']) }}" title="YouTube"><x-icon name="youtube" /></a>
+                        <a class="social-btn social-btn-lg" href="#" aria-label="{{ __('messages.social_link', ['brand' => __('messages.brand'), 'platform' => 'WhatsApp']) }}" title="WhatsApp"><x-icon name="whatsapp" /></a>
                     </div>
                 </div>
                 <nav class="footer-col" aria-label="Explore">
-                    <h3>Explore</h3>
+                    <h3>{{ __('messages.footer_explore') }}</h3>
                     <a href="{{ route('professionals.index') }}">{{ __('messages.professionals') }}</a>
                     <a href="{{ route('products.index') }}">{{ __('messages.products') }}</a>
                     <a href="{{ route('projects.index') }}">{{ __('messages.projects') }}</a>
                     <a href="{{ route('community.index') }}">{{ __('messages.community') }}</a>
                 </nav>
                 <nav class="footer-col" aria-label="Account">
-                    <h3>Account</h3>
+                    <h3>{{ __('messages.footer_account') }}</h3>
                     <a href="{{ route('dashboard') }}">{{ __('messages.dashboard') }}</a>
                     <a href="{{ route('orders.index') }}">{{ __('messages.orders') }}</a>
                     <a href="{{ route('cart.index') }}">{{ __('messages.cart') }}</a>
                     <a href="{{ route('profile.edit') }}">{{ __('messages.edit_profile') }}</a>
                 </nav>
                 <div class="footer-col" aria-label="Contact">
-                    <h3>Contact</h3>
-                    <span class="footer-contact"><x-icon name="pin" /> Amman, Jordan</span>
+                    <h3>{{ __('messages.footer_contact') }}</h3>
+                    <span class="footer-contact"><x-icon name="pin" /> {{ __('messages.footer_location') }}</span>
                     <a class="footer-contact" href="mailto:hello@eymar.jo"><x-icon name="mail" /> hello@eymar.jo</a>
                     <span class="footer-contact"><x-icon name="phone" /> <span dir="ltr">+962 7 9000 0000</span></span>
                 </div>
             </div>
             <div class="container footer-bottom">
-                <p class="footer-note">© {{ now()->year }} <strong>Eymar</strong> — Better work, built together.</p>
+                <p class="footer-note">© {{ now()->year }} <strong>{{ __('messages.brand') }}</strong> — {{ __('messages.footer_tagline') }}</p>
                 <div class="footer-links">
                     <a href="{{ route('professionals.index') }}">{{ __('messages.professionals') }}</a>
                     <a href="{{ route('products.index') }}">{{ __('messages.products') }}</a>
