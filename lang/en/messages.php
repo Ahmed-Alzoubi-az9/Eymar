@@ -55,6 +55,8 @@ return [
     'confirm_password' => 'Confirm password',
     'remember_me' => 'Remember me',
     'forgot_password' => 'Forgot your password?',
+    'no_account_yet' => "Don't have an account?",
+    'have_account' => 'Already have an account?',
     'reset_password' => 'Reset password',
     'password_reset_instructions' => 'Enter your email address and we will send instructions if an account matches.',
     'send_reset_link' => 'Send reset link',

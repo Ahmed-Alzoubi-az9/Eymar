@@ -63,6 +63,6 @@
             </label>
             <button class="button button-dark" type="submit">{{ __('messages.register') }}</button>
         </form>
-        <p class="form-footnote">{{ __('messages.login') }}? <a href="{{ route('login') }}">{{ __('messages.login') }}</a></p>
+        <p class="form-footnote">{{ __('messages.have_account') }} <a href="{{ route('login') }}">{{ __('messages.login') }}</a></p>
     </section>
 @endsection

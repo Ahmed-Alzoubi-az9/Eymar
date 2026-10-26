@@ -22,6 +22,6 @@
             <button class="button button-dark" type="submit">{{ __('messages.login') }}</button>
         </form>
         <p class="form-footnote"><a href="{{ route('password.request') }}">{{ __('messages.forgot_password') }}</a></p>
-        <p class="form-footnote">{{ __('messages.create_account') }}? <a href="{{ route('register') }}">{{ __('messages.register') }}</a></p>
+        <p class="form-footnote">{{ __('messages.no_account_yet') }} <a href="{{ route('register') }}">{{ __('messages.register') }}</a></p>
     </section>
 @endsection

@@ -55,6 +55,8 @@ return [
     'confirm_password' => 'تأكيد كلمة المرور',
     'remember_me' => 'تذكرني',
     'forgot_password' => 'هل نسيت كلمة المرور؟',
+    'no_account_yet' => 'ليس لديك حساب؟',
+    'have_account' => 'لديك حساب بالفعل؟',
     'reset_password' => 'إعادة تعيين كلمة المرور',
     'password_reset_instructions' => 'أدخل بريدك الإلكتروني وسنرسل التعليمات إذا كان هناك حساب مطابق.',
     'send_reset_link' => 'إرسال رابط إعادة التعيين',
