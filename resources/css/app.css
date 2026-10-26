@@ -905,22 +905,6 @@ html[lang='ar'] .professional-copy h2 {
     line-height: 1.6;
 }
 
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 22px;
-}
-
-.footer-links a {
-    color: #526179;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.footer-links a:hover {
-    color: var(--accent-dark);
-}
-
 :focus-visible {
     outline: 3px solid #e3a95e;
     outline-offset: 3px;
@@ -2091,14 +2075,6 @@ html[dir='rtl'] .profile-settings-nav a:hover {
 }
 
 .text-button:hover {
-    transform: translateY(-1px);
-}
-
-.footer-links a {
-    transition: color 160ms ease, transform 160ms ease;
-}
-
-.footer-links a:hover {
     transform: translateY(-1px);
 }
 

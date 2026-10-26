@@ -109,11 +109,6 @@
             </div>
             <div class="container footer-bottom">
                 <p class="footer-note">© {{ now()->year }} <strong>{{ __('messages.brand') }}</strong> — {{ __('messages.footer_tagline') }}</p>
-                <div class="footer-links">
-                    <a href="{{ route('professionals.index') }}">{{ __('messages.professionals') }}</a>
-                    <a href="{{ route('products.index') }}">{{ __('messages.products') }}</a>
-                    <a href="{{ route('community.index') }}">{{ __('messages.community') }}</a>
-                </div>
             </div>
         </footer>
         <script src="{{ asset('js/custom-selects.js') }}"></script>
