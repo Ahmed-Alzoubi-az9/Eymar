@@ -84,8 +84,8 @@
         @elseif ($order->buyer_id === auth()->id() && $order->status === 'delivered')
             <form class="stack-form form-card" action="{{ route('orders.reviews.store', $order) }}" method="post">
                 @csrf
-                <label>Rating (1–5)<input type="number" name="rating" min="1" max="5" required></label>
-                <label>Comment<textarea name="comment" rows="3" maxlength="2000"></textarea></label>
+                <label>Rating (1–5)<input type="number" name="rating" min="1" max="5" placeholder="{{ __('messages.placeholder_review_rating') }}" required></label>
+                <label>Comment<textarea name="comment" rows="3" maxlength="2000" placeholder="{{ __('messages.placeholder_comment') }}"></textarea></label>
                 <button class="button button-dark" type="submit">Submit review</button>
             </form>
         @else

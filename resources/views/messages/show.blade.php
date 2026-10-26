@@ -12,7 +12,7 @@
 {{ $messages->links() }}
 <form class="stack-form message-form" action="{{ route('messages.store', $other) }}" method="post">
 @csrf
-<label>Message<textarea name="body" rows="3" maxlength="2000" required placeholder="Write…"></textarea></label>
+<label>Message<textarea name="body" rows="3" maxlength="2000" required placeholder="{{ __('messages.placeholder_message') }}"></textarea></label>
 <button class="button button-dark" type="submit">Send</button>
 </form>
 <p class="muted"><small>Real-time: this thread checks for new messages every 3 seconds.</small></p>

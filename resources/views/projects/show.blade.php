@@ -45,9 +45,9 @@
             <h2>{{ __('messages.send_quote') }}</h2>
             <form class="stack-form" action="{{ route('projects.quotes.store', $project) }}" method="post">
                 @csrf
-                <label>{{ __('messages.quote_amount') }}<input type="number" name="amount" min="0.01" step="0.01" required></label>
-                <label>{{ __('messages.estimated_days') }}<input type="number" name="estimated_days" min="1" max="3650"></label>
-                <label>{{ __('messages.quote_message') }}<textarea name="message" rows="4" maxlength="3000" required></textarea></label>
+                <label>{{ __('messages.quote_amount') }}<input type="number" name="amount" min="0.01" step="0.01" placeholder="{{ __('messages.placeholder_price') }}" required></label>
+                <label>{{ __('messages.estimated_days') }}<input type="number" name="estimated_days" min="1" max="3650" placeholder="{{ __('messages.placeholder_estimated_days') }}"></label>
+                <label>{{ __('messages.quote_message') }}<textarea name="message" rows="4" maxlength="3000" placeholder="{{ __('messages.placeholder_quote_message') }}" required></textarea></label>
                 <button class="button button-dark" type="submit">{{ __('messages.send_quote') }}</button>
             </form>
         </section>
@@ -89,8 +89,8 @@
         @elseif ($project->customer_id === auth()->id() && $project->status === 'completed' && $project->accepted_provider_id)
             <form class="stack-form form-card" action="{{ route('projects.reviews.store', $project) }}" method="post">
                 @csrf
-                <label>Rating (1–5)<input type="number" name="rating" min="1" max="5" required></label>
-                <label>Comment<textarea name="comment" rows="3" maxlength="2000"></textarea></label>
+                <label>Rating (1–5)<input type="number" name="rating" min="1" max="5" placeholder="{{ __('messages.placeholder_review_rating') }}" required></label>
+                <label>Comment<textarea name="comment" rows="3" maxlength="2000" placeholder="{{ __('messages.placeholder_comment') }}"></textarea></label>
                 <button class="button button-dark" type="submit">Submit review</button>
             </form>
         @else

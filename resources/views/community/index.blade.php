@@ -9,8 +9,8 @@
             <h2>{{ __('messages.create_post') }}</h2>
             <form class="stack-form" action="{{ route('community.store') }}" method="post">
                 @csrf
-                <label>{{ __('messages.post_title') }}<input name="title" maxlength="160" required></label>
-                <label>{{ __('messages.post_body') }}<textarea name="body" rows="4" maxlength="5000" required></textarea></label>
+                <label>{{ __('messages.post_title') }}<input name="title" maxlength="160" placeholder="{{ __('messages.placeholder_post_title') }}" required></label>
+                <label>{{ __('messages.post_body') }}<textarea name="body" rows="4" maxlength="5000" placeholder="{{ __('messages.placeholder_post_body') }}" required></textarea></label>
                 <button class="button button-dark" type="submit">{{ __('messages.publish') }}</button>
             </form>
         </section>
@@ -62,7 +62,7 @@
                     @auth
                         <form class="inline-form comment-form" action="{{ route('community.comments.store', $post) }}" method="post">
                             @csrf
-                            <input name="body" maxlength="2000" placeholder="{{ __('messages.write_comment') }}" required>
+                            <input name="body" maxlength="2000" placeholder="{{ __('messages.placeholder_comment') }}" required>
                             <button class="button button-outline" type="submit">{{ __('messages.comment') }}</button>
                         </form>
                     @endauth

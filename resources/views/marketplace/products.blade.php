@@ -7,7 +7,7 @@
         <h1>{{ __('messages.browse_products') }}</h1>
     </div>
     <form class="search-form" method="get" action="{{ route('products.index') }}">
-        <input name="q" value="{{ request('q') }}" placeholder="{{ __('messages.search') }}" aria-label="{{ __('messages.search') }}" maxlength="100">
+        <input name="q" value="{{ request('q') }}" placeholder="{{ __('messages.search_placeholder') }}" aria-label="{{ __('messages.search') }}" maxlength="100">
         <select name="product_type" aria-label="{{ __('messages.product_type') }}">
             <option value="">{{ __('messages.all_product_types') }}</option>
             @foreach (['material', 'equipment', 'machinery'] as $type)

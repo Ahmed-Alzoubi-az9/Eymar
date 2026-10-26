@@ -50,20 +50,20 @@
                 <legend><span class="profile-section-icon"><x-icon name="user" /></span>{{ __('messages.personal_details') }}</legend>
                 <p class="profile-section-description">{{ __('messages.personal_details_help') }}</p>
                 <div class="form-columns">
-                    <label>{{ __('messages.name') }}<input name="name" value="{{ old('name', $user->name) }}" autocomplete="name" required maxlength="120"></label>
-                    <label>{{ __('messages.username') }}<input name="username" value="{{ old('username', $user->username) }}" autocomplete="username" required minlength="3" maxlength="32"></label>
+                    <label>{{ __('messages.name') }}<input name="name" value="{{ old('name', $user->name) }}" autocomplete="name" required maxlength="120" placeholder="{{ __('messages.placeholder_name') }}"></label>
+                    <label>{{ __('messages.username') }}<input name="username" value="{{ old('username', $user->username) }}" autocomplete="username" required minlength="3" maxlength="32" placeholder="{{ __('messages.placeholder_username') }}"></label>
                 </div>
                 <div class="form-columns">
-                    <label>{{ __('messages.email') }}<input name="email" type="email" value="{{ old('email', $user->email) }}" autocomplete="email" required maxlength="255"></label>
-                    <label>{{ __('messages.phone') }}<input name="phone" type="tel" value="{{ old('phone', $user->phone) }}" autocomplete="tel" required maxlength="24"></label>
+                    <label>{{ __('messages.email') }}<input name="email" type="email" value="{{ old('email', $user->email) }}" autocomplete="email" required maxlength="255" placeholder="{{ __('messages.placeholder_email') }}"></label>
+                    <label>{{ __('messages.phone') }}<input name="phone" type="tel" value="{{ old('phone', $user->phone) }}" autocomplete="tel" required maxlength="24" placeholder="{{ __('messages.placeholder_phone') }}"></label>
                 </div>
                 <div class="form-columns">
-                    <label>{{ __('messages.location') }}<input name="location" value="{{ old('location', $user->location) }}" maxlength="160"></label>
+                    <label>{{ __('messages.location') }}<input name="location" value="{{ old('location', $user->location) }}" maxlength="160" placeholder="{{ __('messages.placeholder_location') }}"></label>
                     @if ($user->role === 'customer')
-                        <label>{{ __('messages.age') }}<input name="age" type="number" min="13" max="120" value="{{ old('age', $user->age) }}"></label>
+                        <label>{{ __('messages.age') }}<input name="age" type="number" min="13" max="120" value="{{ old('age', $user->age) }}" placeholder="{{ __('messages.placeholder_age') }}"></label>
                     @endif
                 </div>
-                <label>{{ __('messages.address') }}<textarea name="address" rows="3" maxlength="2000">{{ old('address', $user->address) }}</textarea></label>
+                <label>{{ __('messages.address') }}<textarea name="address" rows="3" maxlength="2000" placeholder="{{ __('messages.placeholder_address') }}">{{ old('address', $user->address) }}</textarea></label>
             </fieldset>
 
             <fieldset class="panel profile-section stack-form" id="profile-media">
@@ -118,7 +118,7 @@
                     </label>
                     <div class="provider-fields" data-provider-fields>
                         <div class="form-columns">
-                            <label>{{ __('messages.experience_years') }}<input name="experience_years" type="number" min="0" max="70" value="{{ old('experience_years', $user->serviceProviderProfile?->experience_years) }}" data-provider-required></label>
+                            <label>{{ __('messages.experience_years') }}<input name="experience_years" type="number" min="0" max="70" value="{{ old('experience_years', $user->serviceProviderProfile?->experience_years) }}" placeholder="{{ __('messages.placeholder_experience') }}" data-provider-required></label>
                             <label>{{ __('messages.pricing_basis') }}
                                 <select name="pricing_basis" data-provider-required>
                                     <option value="">{{ __('messages.choose_pricing_basis') }}</option>
@@ -127,8 +127,8 @@
                                 </select>
                             </label>
                         </div>
-                        <label>{{ __('messages.service_rate') }}<input name="service_rate" type="number" min="0.01" step="0.01" value="{{ old('service_rate', $user->serviceProviderProfile?->service_rate) }}" data-provider-required></label>
-                        <label>{{ __('messages.previous_work') }}<textarea name="previous_work" rows="4" maxlength="5000">{{ old('previous_work', $user->serviceProviderProfile?->previous_work) }}</textarea></label>
+                        <label>{{ __('messages.service_rate') }}<input name="service_rate" type="number" min="0.01" step="0.01" value="{{ old('service_rate', $user->serviceProviderProfile?->service_rate) }}" placeholder="{{ __('messages.placeholder_rate') }}" data-provider-required></label>
+                        <label>{{ __('messages.previous_work') }}<textarea name="previous_work" rows="4" maxlength="5000" placeholder="{{ __('messages.placeholder_previous_work') }}">{{ old('previous_work', $user->serviceProviderProfile?->previous_work) }}</textarea></label>
                         <label class="check-row"><input name="is_available" type="checkbox" value="1" @checked(old('is_available', $user->serviceProviderProfile?->is_available ?? true))> <span>{{ __('messages.available_for_work') }}</span></label>
                     </div>
                 </fieldset>
@@ -137,11 +137,11 @@
                     <legend><span class="profile-section-icon"><x-icon name="building" /></span>{{ __('messages.company_profile') }}</legend>
                     <p class="profile-section-description">{{ __('messages.company_profile_help') }}</p>
                     <div class="form-columns">
-                        <label>{{ __('messages.business_name') }}<input name="business_name" value="{{ old('business_name', $user->business_name) }}" required maxlength="160"></label>
-                        <label>{{ __('messages.company_owner') }}<input name="company_owner" value="{{ old('company_owner', $user->company_owner) }}" required maxlength="120"></label>
+                        <label>{{ __('messages.business_name') }}<input name="business_name" value="{{ old('business_name', $user->business_name) }}" required maxlength="160" placeholder="{{ __('messages.placeholder_company_name') }}"></label>
+                        <label>{{ __('messages.company_owner') }}<input name="company_owner" value="{{ old('company_owner', $user->company_owner) }}" required maxlength="120" placeholder="{{ __('messages.placeholder_name') }}"></label>
                     </div>
                     <label>{{ __('messages.established_date') }}<input name="established_date" type="date" value="{{ old('established_date', $user->established_date?->toDateString()) }}" max="{{ now()->toDateString() }}"></label>
-                    <label>{{ __('messages.bio') }}<textarea name="bio" rows="4" maxlength="2000">{{ old('bio', $user->bio) }}</textarea></label>
+                    <label>{{ __('messages.bio') }}<textarea name="bio" rows="4" maxlength="2000" placeholder="{{ __('messages.placeholder_description') }}">{{ old('bio', $user->bio) }}</textarea></label>
                 </fieldset>
             @endif
 

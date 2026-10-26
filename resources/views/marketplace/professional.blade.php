@@ -43,9 +43,9 @@
                     <div class="form-columns form-columns--3">
                         <label>Date<input type="date" name="date" min="{{ now()->toDateString() }}" required></label>
                         <label>Start<input type="time" name="start_time" required></label>
-                        <label>Minutes<input type="number" name="duration_minutes" min="30" max="480" step="30" value="60" required></label>
+                        <label>Minutes<input type="number" name="duration_minutes" min="30" max="480" step="30" value="60" placeholder="{{ __('messages.placeholder_quantity') }}" required></label>
                     </div>
-                    <label>Notes<textarea name="notes" rows="2" maxlength="1000" placeholder="What work is needed?"></textarea></label>
+                    <label>Notes<textarea name="notes" rows="2" maxlength="1000" placeholder="{{ __('messages.placeholder_description') }}"></textarea></label>
                     <button class="button button-dark" type="submit">Send booking request</button>
                 </form>
             @endif

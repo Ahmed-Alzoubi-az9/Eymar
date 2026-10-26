@@ -5,7 +5,7 @@
 @section('content')
     <div class="page-heading"><p class="eyebrow">{{ __('messages.admin') }}</p><h1>{{ __('messages.manage_users') }}</h1></div>
     <form class="search-form" method="get">
-        <input name="q" value="{{ request('q') }}" placeholder="{{ __('messages.search') }}">
+        <input name="q" value="{{ request('q') }}" placeholder="{{ __('messages.search_placeholder') }}">
         <button class="button button-dark" type="submit">{{ __('messages.search') }}</button>
     </form>
     <div class="table-wrap">

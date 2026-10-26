@@ -14,7 +14,7 @@
         <form action="{{ route('password.email') }}" method="post" class="stack-form">
             @csrf
             <label>{{ __('messages.email') }}
-                <input name="email" type="email" value="{{ old('email') }}" autocomplete="email" required autofocus>
+                <input name="email" type="email" value="{{ old('email') }}" autocomplete="email" placeholder="{{ __('messages.placeholder_email') }}" required autofocus>
             </label>
             <button class="button button-dark" type="submit">{{ __('messages.send_reset_link') }}</button>
         </form>

@@ -40,12 +40,12 @@
                             </select>
                         </label>
                         <label>{{ __('messages.quantity') }}
-                            <input type="number" name="quantity" min="1" max="{{ $product->stock }}" value="1" required>
+                            <input type="number" name="quantity" min="1" max="{{ $product->stock }}" value="1" placeholder="{{ __('messages.placeholder_quantity') }}" required>
                         </label>
                         @if ($product->is_rentable)
                             <div class="form-columns" data-rental-dates hidden>
                                 <label>{{ __('messages.rental_days') }}
-                                    <input type="number" name="rental_days" min="1" max="365" value="1" data-rental-required>
+                                    <input type="number" name="rental_days" min="1" max="365" value="1" placeholder="{{ __('messages.placeholder_quantity') }}" data-rental-required>
                                 </label>
                                 <label>{{ __('messages.rental_start_date') }}
                                     <input type="date" name="rental_start_date" min="{{ now()->toDateString() }}" value="{{ now()->toDateString() }}" data-rental-required>

@@ -8,10 +8,10 @@
         <section class="form-card">
             <form class="stack-form" action="{{ route('checkout.store') }}" method="post">
                 @csrf
-                <label>{{ __('messages.shipping_name') }}<input name="shipping_name" value="{{ old('shipping_name', auth()->user()->name) }}" maxlength="120" required></label>
-                <label>{{ __('messages.shipping_phone') }}<input name="shipping_phone" type="tel" value="{{ old('shipping_phone', auth()->user()->phone) }}" maxlength="32" required></label>
-                <label>{{ __('messages.shipping_address') }}<textarea name="shipping_address" rows="4" maxlength="2000" required>{{ old('shipping_address', auth()->user()->address ?: auth()->user()->location) }}</textarea></label>
-                <label>{{ __('messages.notes') }}<textarea name="notes" rows="3" maxlength="1000">{{ old('notes') }}</textarea></label>
+                <label>{{ __('messages.shipping_name') }}<input name="shipping_name" value="{{ old('shipping_name', auth()->user()->name) }}" maxlength="120" placeholder="{{ __('messages.placeholder_shipping_name') }}" required></label>
+                <label>{{ __('messages.shipping_phone') }}<input name="shipping_phone" type="tel" value="{{ old('shipping_phone', auth()->user()->phone) }}" maxlength="32" placeholder="{{ __('messages.placeholder_phone') }}" required></label>
+                <label>{{ __('messages.shipping_address') }}<textarea name="shipping_address" rows="4" maxlength="2000" placeholder="{{ __('messages.placeholder_shipping_address') }}" required>{{ old('shipping_address', auth()->user()->address ?: auth()->user()->location) }}</textarea></label>
+                <label>{{ __('messages.notes') }}<textarea name="notes" rows="3" maxlength="1000" placeholder="{{ __('messages.placeholder_notes') }}">{{ old('notes') }}</textarea></label>
                 <label>{{ __('messages.payment_method') }}
                     <select name="payment_method" required>
                         <option value="cash_on_delivery">{{ __('messages.cash_on_delivery') }}</option>

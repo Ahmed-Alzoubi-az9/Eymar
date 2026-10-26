@@ -7,8 +7,8 @@
 <section class="form-card">
 <form class="stack-form" action="{{ route('portfolio.store') }}" method="post" enctype="multipart/form-data">
 @csrf
-<label>Title<input name="title" maxlength="160" required></label>
-<label>Description<textarea name="description" rows="3" maxlength="3000"></textarea></label>
+<label>Title<input name="title" maxlength="160" placeholder="{{ __('messages.placeholder_portfolio_title') }}" required></label>
+<label>Description<textarea name="description" rows="3" maxlength="3000" placeholder="{{ __('messages.placeholder_description') }}"></textarea></label>
 <label>Photos (1–8)<input type="file" name="images[]" accept="image/*" multiple required></label>
 <button class="button button-dark" type="submit">Publish item</button>
 </form>
