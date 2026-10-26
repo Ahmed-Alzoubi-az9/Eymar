@@ -15,7 +15,10 @@
             </form>
         </section>
     @else
-        <p class="notice"><a href="{{ route('login') }}">{{ __('messages.login') }}</a> · {{ __('messages.create_post') }}</p>
+        <section class="community-signin">
+            <strong>{{ __('messages.create_post') }}</strong>
+            <a class="button button-dark" href="{{ route('login') }}">{{ __('messages.login') }}</a>
+        </section>
     @endauth
 
     <div class="feed">

@@ -674,6 +674,28 @@ html[dir='rtl'] .service-card:focus-visible .service-arrow {
 .file-upload-card:hover { background: var(--burgundy-50); border-color: var(--burgundy-600); }
 .notification-unread { border-inline-start-color: var(--burgundy-600); }
 .notice { color: var(--burgundy-900); background: var(--burgundy-50); border-color: var(--burgundy-100); }
+
+/* ---------- Community sign-in prompt ---------- */
+.community-signin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    max-width: 480px;
+    margin: 24px auto 32px;
+    padding: 36px 28px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid var(--burgundy-100);
+    border-radius: 16px;
+    animation: content-enter 360ms ease-out both;
+}
+.community-signin strong {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--burgundy-900);
+}
+
 :focus-visible { outline-color: var(--gold-500); }
 .skip-link { background: var(--burgundy-800); }
 
