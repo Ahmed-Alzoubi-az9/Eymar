@@ -1207,7 +1207,8 @@ html[dir='rtl'] .app-page .comment-form input::placeholder {
 html[dir='rtl'] .app-page .stack-form select,
 html[dir='rtl'] .app-page .search-form select,
 html[dir='rtl'] .app-page .status-form select {
-    background-position: left 7px center;
+    padding-inline: 58px 20px;
+    background-position: right 7px center;
 }
 
 .app-page input[type='date']::-webkit-calendar-picker-indicator,
@@ -1281,7 +1282,7 @@ html[dir='rtl'] .app-page .stack-form input[type='tel'],
 html[dir='rtl'] .app-page .stack-form input[type='date'],
 html[dir='rtl'] .app-page .stack-form input[type='time'] {
     padding-inline-start: 68px !important;
-    background-position: left 24px center;
+    background-position: right 24px center;
 }
 
 html[dir='rtl'] .app-page .search-form input[name='q'],
@@ -1660,6 +1661,16 @@ html[dir='rtl'] .app-page .search-form input[name='location'] {
     content: '';
     transform: translateY(-50%);
     transition: transform 180ms ease;
+}
+
+html[dir='rtl'] .select-display {
+    padding-inline: 58px 20px;
+}
+
+html[dir='rtl'] .select-display::after {
+    inset-inline-start: auto;
+    inset-inline-end: auto;
+    right: 7px;
 }
 
 .select-shell:hover:not(.is-disabled) .select-display {
