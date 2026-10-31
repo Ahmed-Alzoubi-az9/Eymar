@@ -58,7 +58,8 @@ class AuthController extends Controller
         unset($validated['company_logo']);
 
         $user = User::create($validated);
-        $user->sendEmailVerificationNotification();
+        // $user->sendEmailVerificationNotification();
+        $user->markEmailAsVerified();
         Auth::login($user);
         $request->session()->regenerate();
 
@@ -127,9 +128,12 @@ class AuthController extends Controller
 
     public function verifyNotice(): View|RedirectResponse
     {
-        return auth()->user()->hasVerifiedEmail()
-            ? redirect()->route('dashboard')
-            : view('auth.verify-email');
+       // return auth()->user()->hasVerifiedEmail()
+       // ? redirect()->route('dashboard')
+       // : view('auth.verify-email');
+
+        // Verification disabled for testing — always redirect to dashboard
+        return redirect()->route('dashboard');
     }
 
     public function verify(Request $request): RedirectResponse
