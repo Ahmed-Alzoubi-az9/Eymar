@@ -52,7 +52,7 @@ class BookingController extends Controller
             ->first();
 
         if (! $slot) {
-            throw ValidationException::withMessages(['date' => 'Provider is not available at that time. Pick a free slot.']);
+            throw ValidationException::withMessages(['date' => __('messages.booking_time_unavailable')]);
         }
 
         // No double-booking of the same period.
@@ -65,7 +65,7 @@ class BookingController extends Controller
                     || $validated['start_time'] < $bEnd && $endTime > $b->start_time;
             });
         if ($clash) {
-            throw ValidationException::withMessages(['start_time' => 'That hour was just booked. Try another time.']);
+            throw ValidationException::withMessages(['start_time' => __('messages.booking_hour_taken')]);
         }
 
         $booking = DB::transaction(function () use ($request, $provider, $validated) {
@@ -73,14 +73,18 @@ class BookingController extends Controller
                 ...$validated, 'customer_id' => $request->user()->id, 'provider_id' => $provider->id, 'status' => 'pending',
             ]);
             $provider->notify(new MarketplaceNotification(
-                'New booking request',
-                "{$request->user()->name} requested {$validated['date']} at {$validated['start_time']}.",
+                __('messages.notification_new_booking'),
+                __('messages.notification_new_booking_body', [
+                    'name' => $request->user()->name,
+                    'date' => $validated['date'],
+                    'time' => $validated['start_time'],
+                ]),
                 route('bookings.index'),
             ));
             return $booking;
         });
 
-        return redirect()->route('bookings.index')->with('success', "Booking #{$booking->id} sent. Provider has 24h to respond.");
+        return redirect()->route('bookings.index')->with('success', __('messages.booking_sent', ['id' => $booking->id]));
     }
 
     public function respond(Request $request, Booking $booking): RedirectResponse
@@ -90,12 +94,19 @@ class BookingController extends Controller
         abort_unless($booking->status === 'pending', 422);
 
         $booking->update(['status' => $status]);
+        $statusLabel = __('messages.' . $status);
         $booking->customer->notify(new MarketplaceNotification(
-            "Booking {$status}",
-            "Your booking #{$booking->id} for {$booking->date->toDateString()} was {$status}.",
+            __('messages.notification_booking_status', ['status' => $statusLabel]),
+            __('messages.notification_booking_status_body', [
+                'id' => $booking->id,
+                'date' => $booking->date->toDateString(),
+                'status' => $statusLabel,
+            ]),
             route('bookings.index'),
         ));
 
-        return back()->with('success', "Booking {$status}.");
+        return back()->with('success', $status === 'accepted'
+            ? __('messages.booking_accepted')
+            : __('messages.booking_rejected'));
     }
 }
