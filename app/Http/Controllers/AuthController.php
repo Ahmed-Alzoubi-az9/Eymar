@@ -58,7 +58,8 @@ class AuthController extends Controller
         unset($validated['company_logo']);
 
         $user = User::create($validated);
-        $user->sendEmailVerificationNotification();
+        // $user->sendEmailVerificationNotification();
+        $user->markEmailAsVerified();
         Auth::login($user);
         $request->session()->regenerate();
 
