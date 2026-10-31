@@ -1,7 +1,7 @@
 @extends('layouts.app')
-@section('title', 'Chat with '.($other->business_name ?: $other->name))
+@section('title', __('messages.chat_with', ['name' => $other->business_name ?: $other->name]))
 @section('content')
-<div class="page-heading"><p class="eyebrow"><a href="{{ route('messages.index') }}">Messages</a></p>
+<div class="page-heading"><p class="eyebrow"><a href="{{ route('messages.index') }}">{{ __('messages.messages_label') }}</a></p>
 <h1>{{ $other->business_name ?: $other->name }}</h1><p class="muted">{{ $other->email }} {{ $other->phone ? '· '.$other->phone : '' }}</p></div>
 <section class="panel" id="thread" data-poll-url="{{ route('messages.poll', $other) }}" data-user-id="{{ auth()->id() }}" data-last-id="{{ $messages->last()?->id ?? 0 }}">
 <div id="message-list" style="display:flex;flex-direction:column;gap:10px;max-height:55vh;overflow:auto">
@@ -12,10 +12,10 @@
 {{ $messages->links() }}
 <form class="stack-form message-form" action="{{ route('messages.store', $other) }}" method="post">
 @csrf
-<label>Message<textarea name="body" rows="3" maxlength="2000" required placeholder="{{ __('messages.placeholder_message') }}"></textarea></label>
-<button class="button button-dark" type="submit">Send</button>
+<label>{{ __('messages.message') }}<textarea name="body" rows="3" maxlength="2000" required placeholder="{{ __('messages.placeholder_message') }}"></textarea></label>
+<button class="button button-dark" type="submit">{{ __('messages.send') }}</button>
 </form>
-<p class="muted"><small>Real-time: this thread checks for new messages every 3 seconds.</small></p>
+<p class="muted"><small>{{ __('messages.messages_realtime_note') }}</small></p>
 </section>
 <script>
 (function(){

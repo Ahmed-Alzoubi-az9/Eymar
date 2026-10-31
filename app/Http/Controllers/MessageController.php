@@ -70,7 +70,7 @@ class MessageController extends Controller
             ...$validated, 'sender_id' => $request->user()->id, 'recipient_id' => $user->id,
         ]);
 
-        return back()->with('success', 'Message sent.');
+        return back()->with('success', __('messages.message_sent'));
     }
 
     // Polled every 3s by the thread page for real-time feel (no websockets needed on XAMPP).
