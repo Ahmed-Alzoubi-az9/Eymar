@@ -34,11 +34,11 @@
 
         <div class="action-grid">
             <a class="panel action-card" href="{{ route('profile.edit') }}"><span class="action-card-icon"><x-icon name="user" /></span>{{ __('messages.edit_profile') }}<x-icon name="arrow" class="action-card-arrow" /></a>
-            <a class="panel action-card" href="{{ route('messages.index') }}"><span class="action-card-icon"><x-icon name="chat" /></span>Messages<x-icon name="arrow" class="action-card-arrow" /></a>
-            <a class="panel action-card" href="{{ route('bookings.index') }}"><span class="action-card-icon"><x-icon name="briefcase" /></span>Appointments<x-icon name="arrow" class="action-card-arrow" /></a>
+            <a class="panel action-card" href="{{ route('messages.index') }}"><span class="action-card-icon"><x-icon name="chat" /></span>{{ __('messages.messages_label') }}<x-icon name="arrow" class="action-card-arrow" /></a>
+            <a class="panel action-card" href="{{ route('bookings.index') }}"><span class="action-card-icon"><x-icon name="briefcase" /></span>{{ __('messages.appointments_label') }}<x-icon name="arrow" class="action-card-arrow" /></a>
             @if (auth()->user()->isServiceProvider())
-                <a class="panel action-card" href="{{ route('schedules.index') }}"><span class="action-card-icon"><x-icon name="calendar" /></span>Availability schedule<x-icon name="arrow" class="action-card-arrow" /></a>
-                <a class="panel action-card" href="{{ route('portfolio.index') }}"><span class="action-card-icon"><x-icon name="package" /></span>Portfolio<x-icon name="arrow" class="action-card-arrow" /></a>
+                <a class="panel action-card" href="{{ route('schedules.index') }}"><span class="action-card-icon"><x-icon name="calendar" /></span>{{ __('messages.availability_schedule') }}<x-icon name="arrow" class="action-card-arrow" /></a>
+                <a class="panel action-card" href="{{ route('portfolio.index') }}"><span class="action-card-icon"><x-icon name="package" /></span>{{ __('messages.portfolio') }}<x-icon name="arrow" class="action-card-arrow" /></a>
             @endif
             @if (auth()->user()->role === 'customer')
                 <a class="panel action-card" href="{{ route('projects.create') }}"><span class="action-card-icon"><x-icon name="briefcase" /></span>{{ __('messages.post_project') }}<x-icon name="arrow" class="action-card-arrow" /></a>
